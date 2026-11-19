@@ -36906,6 +36906,9 @@ components:
                     properties:
                       _source:
                         $ref: '#/components/schemas/_common___TDocument'
+                x-type-arguments:
+                  _common___TDocument:
+                    $ref: '#/components/schemas/_common___TDocument'
             required:
               - _id
               - _index
@@ -37327,6 +37330,9 @@ components:
                 properties:
                   _source:
                     $ref: '#/components/schemas/_common___TDocument'
+            x-type-arguments:
+              _common___TDocument:
+                $ref: '#/components/schemas/_common___TDocument'
       description: ''
     get___404:
       content:
@@ -40036,6 +40042,9 @@ components:
                     type: integer
                     format: int32
                     x-version-added: '2.18'
+            x-type-arguments:
+              _core.search___TDocument:
+                $ref: '#/components/schemas/_core.search___TDocument'
       description: ''
     search___200:
       content:
@@ -45361,6 +45370,9 @@ components:
               items:
                 $ref: '#/components/schemas/_common.query_dsl___QueryContainer'
           x-union-kind: titled
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.query_dsl___QueryContainer'
     _common.aggregations___CalendarInterval:
       oneOf:
         - title: second
@@ -45800,6 +45812,10 @@ components:
             min:
               type: number
               format: double
+      x-type-arguments:
+        _common.aggregations___T:
+          type: number
+          format: double
     _common.aggregations___ExtendedBoundsFieldDateMath:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___ExtendedBounds'
@@ -45809,6 +45825,9 @@ components:
               $ref: '#/components/schemas/_common.aggregations___FieldDateMath'
             min:
               $ref: '#/components/schemas/_common.aggregations___FieldDateMath'
+      x-type-arguments:
+        _common.aggregations___T:
+          $ref: '#/components/schemas/_common.aggregations___FieldDateMath'
     _common.aggregations___ExtendedStatsAggregate:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___ExtendedStatsAggregateBase'
@@ -46653,6 +46672,9 @@ components:
                       items:
                         $ref: '#/components/schemas/_common.aggregations___TBucket'
                   x-union-kind: keyed-or-list
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common.aggregations___TBucket'
           required:
             - buckets
     _common.aggregations___MultiBucketAggregateBaseAdjacencyMatrixBucket:
@@ -46673,8 +46695,14 @@ components:
                       items:
                         $ref: '#/components/schemas/_common.aggregations___AdjacencyMatrixBucket'
                   x-union-kind: titled
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common.aggregations___AdjacencyMatrixBucket'
           required:
             - buckets
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___AdjacencyMatrixBucket'
     _common.aggregations___MultiBucketAggregateBaseCompositeBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketAggregateBase'
@@ -46691,8 +46719,14 @@ components:
                       items:
                         $ref: '#/components/schemas/_common.aggregations___CompositeBucket'
                   x-union-kind: keyed-or-list
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common.aggregations___CompositeBucket'
           required:
             - buckets
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___CompositeBucket'
     _common.aggregations___MultiBucketAggregateBaseDateHistogramBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketAggregateBase'
@@ -46709,8 +46743,14 @@ components:
                       items:
                         $ref: '#/components/schemas/_common.aggregations___DateHistogramBucket'
                   x-union-kind: keyed-or-list
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common.aggregations___DateHistogramBucket'
           required:
             - buckets
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___DateHistogramBucket'
     _common.aggregations___MultiBucketAggregateBaseFiltersBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketAggregateBase'
@@ -46727,8 +46767,14 @@ components:
                       items:
                         $ref: '#/components/schemas/_common.aggregations___FiltersBucket'
                   x-union-kind: keyed-or-list
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common.aggregations___FiltersBucket'
           required:
             - buckets
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___FiltersBucket'
     _common.aggregations___MultiBucketAggregateBaseGeoHashGridBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketAggregateBase'
@@ -46745,8 +46791,14 @@ components:
                       items:
                         $ref: '#/components/schemas/_common.aggregations___GeoHashGridBucket'
                   x-union-kind: keyed-or-list
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common.aggregations___GeoHashGridBucket'
           required:
             - buckets
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___GeoHashGridBucket'
     _common.aggregations___MultiBucketAggregateBaseGeoTileGridBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketAggregateBase'
@@ -46763,8 +46815,14 @@ components:
                       items:
                         $ref: '#/components/schemas/_common.aggregations___GeoTileGridBucket'
                   x-union-kind: keyed-or-list
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common.aggregations___GeoTileGridBucket'
           required:
             - buckets
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___GeoTileGridBucket'
     _common.aggregations___MultiBucketAggregateBaseHistogramBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketAggregateBase'
@@ -46781,8 +46839,14 @@ components:
                       items:
                         $ref: '#/components/schemas/_common.aggregations___HistogramBucket'
                   x-union-kind: keyed-or-list
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common.aggregations___HistogramBucket'
           required:
             - buckets
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___HistogramBucket'
     _common.aggregations___MultiBucketAggregateBaseIpRangeBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketAggregateBase'
@@ -46799,8 +46863,14 @@ components:
                       items:
                         $ref: '#/components/schemas/_common.aggregations___IpRangeBucket'
                   x-union-kind: keyed-or-list
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common.aggregations___IpRangeBucket'
           required:
             - buckets
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___IpRangeBucket'
     _common.aggregations___MultiBucketAggregateBaseLongRareTermsBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketAggregateBase'
@@ -46817,6 +46887,12 @@ components:
                       items:
                         $ref: '#/components/schemas/_common.aggregations___LongRareTermsBucket'
                   x-union-kind: keyed-or-list
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common.aggregations___LongRareTermsBucket'
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___LongRareTermsBucket'
     _common.aggregations___MultiBucketAggregateBaseRangeBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketAggregateBase'
@@ -46833,8 +46909,14 @@ components:
                       items:
                         $ref: '#/components/schemas/_common.aggregations___RangeBucket'
                   x-union-kind: keyed-or-list
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common.aggregations___RangeBucket'
           required:
             - buckets
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___RangeBucket'
     _common.aggregations___MultiBucketAggregateBaseStringRareTermsBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketAggregateBase'
@@ -46851,6 +46933,12 @@ components:
                       items:
                         $ref: '#/components/schemas/_common.aggregations___StringRareTermsBucket'
                   x-union-kind: keyed-or-list
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common.aggregations___StringRareTermsBucket'
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___StringRareTermsBucket'
     _common.aggregations___MultiBucketAggregateBaseVariableWidthHistogramBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketAggregateBase'
@@ -46867,8 +46955,14 @@ components:
                       items:
                         $ref: '#/components/schemas/_common.aggregations___VariableWidthHistogramBucket'
                   x-union-kind: keyed-or-list
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common.aggregations___VariableWidthHistogramBucket'
           required:
             - buckets
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___VariableWidthHistogramBucket'
     _common.aggregations___MultiBucketAggregateBaseVoid:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketAggregateBase'
@@ -46885,6 +46979,12 @@ components:
                       items:
                         $ref: '#/components/schemas/_common___Void'
                   x-union-kind: keyed-or-list
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common___Void'
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common___Void'
     _common.aggregations___MultiBucketBase:
       type: object
       properties:
@@ -47356,6 +47456,9 @@ components:
             doc_count:
               type: integer
               format: int64
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___TBucket'
     _common.aggregations___SignificantTermsAggregateBaseSignificantLongTermsBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___SignificantTermsAggregateBase'
@@ -47372,6 +47475,12 @@ components:
                       items:
                         $ref: '#/components/schemas/_common.aggregations___SignificantLongTermsBucket'
                   x-union-kind: keyed-or-list
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common.aggregations___SignificantLongTermsBucket'
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___SignificantLongTermsBucket'
     _common.aggregations___SignificantTermsAggregateBaseSignificantStringTermsBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___SignificantTermsAggregateBase'
@@ -47388,6 +47497,12 @@ components:
                       items:
                         $ref: '#/components/schemas/_common.aggregations___SignificantStringTermsBucket'
                   x-union-kind: keyed-or-list
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common.aggregations___SignificantStringTermsBucket'
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___SignificantStringTermsBucket'
     _common.aggregations___SignificantTermsAggregateBaseVoid:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___SignificantTermsAggregateBase'
@@ -47404,6 +47519,12 @@ components:
                       items:
                         $ref: '#/components/schemas/_common___Void'
                   x-union-kind: keyed-or-list
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common___Void'
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common___Void'
     _common.aggregations___SignificantTermsAggregation:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___BucketAggregationBase'
@@ -47774,6 +47895,9 @@ components:
             sum_other_doc_count:
               type: integer
               format: int64
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___TBucket'
     _common.aggregations___TermsAggregateBaseDoubleTermsBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___TermsAggregateBase'
@@ -47785,6 +47909,9 @@ components:
                 $ref: '#/components/schemas/_common.aggregations___DoubleTermsBucket'
           required:
             - buckets
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___DoubleTermsBucket'
     _common.aggregations___TermsAggregateBaseLongTermsBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___TermsAggregateBase'
@@ -47796,6 +47923,9 @@ components:
                 $ref: '#/components/schemas/_common.aggregations___LongTermsBucket'
           required:
             - buckets
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___LongTermsBucket'
     _common.aggregations___TermsAggregateBaseMultiTermsBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___TermsAggregateBase'
@@ -47812,6 +47942,12 @@ components:
                       items:
                         $ref: '#/components/schemas/_common.aggregations___MultiTermsBucket'
                   x-union-kind: keyed-or-list
+              x-type-arguments:
+                _common.aggregations___TBucket:
+                  $ref: '#/components/schemas/_common.aggregations___MultiTermsBucket'
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___MultiTermsBucket'
     _common.aggregations___TermsAggregateBaseStringTermsBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___TermsAggregateBase'
@@ -47823,6 +47959,9 @@ components:
                 $ref: '#/components/schemas/_common.aggregations___StringTermsBucket'
           required:
             - buckets
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___StringTermsBucket'
     _common.aggregations___TermsAggregateBaseUnsignedLongTermsBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___TermsAggregateBase'
@@ -47834,6 +47973,9 @@ components:
                 $ref: '#/components/schemas/_common.aggregations___UnsignedLongTermsBucket'
           required:
             - buckets
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common.aggregations___UnsignedLongTermsBucket'
     _common.aggregations___TermsAggregateBaseVoid:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___TermsAggregateBase'
@@ -47845,6 +47987,9 @@ components:
                 $ref: '#/components/schemas/_common___Void'
           required:
             - buckets
+      x-type-arguments:
+        _common.aggregations___TBucket:
+          $ref: '#/components/schemas/_common___Void'
     _common.aggregations___TermsAggregation:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___BucketAggregationBase'
@@ -54095,6 +54240,9 @@ components:
           properties:
             _source:
               $ref: '#/components/schemas/_common___TDocument'
+      x-type-arguments:
+        _common___TDocument:
+          $ref: '#/components/schemas/_common___TDocument'
     _core.get___GetResultBase:
       type: object
       properties:
@@ -54352,6 +54500,9 @@ components:
           properties:
             status:
               type: number
+      x-type-arguments:
+        _core.search___TDocument:
+          $ref: '#/components/schemas/_core.search___TDocument'
     _core.msearch___MultiSearchResult:
       type: object
       properties:
@@ -55055,6 +55206,9 @@ components:
                       properties:
                         _source:
                           $ref: '#/components/schemas/_core.search___TDocument'
+                  x-type-arguments:
+                    _core.search___TDocument:
+                      $ref: '#/components/schemas/_core.search___TDocument'
                 - type: array
                   items:
                     allOf:
@@ -55063,6 +55217,9 @@ components:
                         properties:
                           _source:
                             $ref: '#/components/schemas/_core.search___TDocument'
+                    x-type-arguments:
+                      _core.search___TDocument:
+                        $ref: '#/components/schemas/_core.search___TDocument'
               x-union-kind: one-or-many
           required:
             - options
@@ -55504,6 +55661,9 @@ components:
                 properties:
                   _source:
                     $ref: '#/components/schemas/_core.search___TDocument'
+            x-type-arguments:
+              _core.search___TDocument:
+                $ref: '#/components/schemas/_core.search___TDocument'
         max_score:
           oneOf:
             - type: 'null'
@@ -55526,6 +55686,10 @@ components:
                   - type: object
                     properties:
                       _source: {}
+                x-type-arguments:
+                  _core.search___TDocument: {}
+      x-type-arguments:
+        _core.search___TDocument: {}
     _core.search___InnerHits:
       type: object
       properties:
@@ -55900,6 +56064,9 @@ components:
         - $ref: '#/components/schemas/_core.search___SearchResult'
         - type: object
           properties: {}
+      x-type-arguments:
+        _core.search___TDocument:
+          $ref: '#/components/schemas/_core.search___TDocument'
     _core.search___SearchResult:
       type: object
       properties:
@@ -55928,6 +56095,12 @@ components:
                         properties:
                           _source:
                             $ref: '#/components/schemas/_core.search___TDocument'
+                    x-type-arguments:
+                      _core.search___TDocument:
+                        $ref: '#/components/schemas/_core.search___TDocument'
+          x-type-arguments:
+            _core.search___TDocument:
+              $ref: '#/components/schemas/_core.search___TDocument'
         processor_results:
           x-version-added: '3.0'
           type: array
@@ -55977,6 +56150,8 @@ components:
                       - type: object
                         properties:
                           _source: {}
+                    x-type-arguments:
+                      _core.search___TDocument: {}
             suggest:
               type: object
               additionalProperties:
@@ -55995,6 +56170,8 @@ components:
                                     - type: object
                                       properties:
                                         _source: {}
+                                  x-type-arguments:
+                                    _core.search___TDocument: {}
                                 - type: array
                                   items:
                                     allOf:
@@ -56002,12 +56179,18 @@ components:
                                       - type: object
                                         properties:
                                           _source: {}
+                                    x-type-arguments:
+                                      _core.search___TDocument: {}
                               x-union-kind: one-or-many
+                      x-type-arguments:
+                        _core.search___TDocument: {}
                     - title: phrase
                       $ref: '#/components/schemas/_core.search___PhraseSuggest'
                     - title: term
                       $ref: '#/components/schemas/_core.search___TermSuggest'
                   x-union-kind: titled
+      x-type-arguments:
+        _core.search___TDocument: {}
     _core.search___ShardProfile:
       type: object
       properties:
@@ -56098,6 +56281,9 @@ components:
                           properties:
                             _source:
                               $ref: '#/components/schemas/_core.search___TDocument'
+                      x-type-arguments:
+                        _core.search___TDocument:
+                          $ref: '#/components/schemas/_core.search___TDocument'
                     - type: array
                       items:
                         allOf:
@@ -56106,7 +56292,13 @@ components:
                             properties:
                               _source:
                                 $ref: '#/components/schemas/_core.search___TDocument'
+                        x-type-arguments:
+                          _core.search___TDocument:
+                            $ref: '#/components/schemas/_core.search___TDocument'
                   x-union-kind: one-or-many
+          x-type-arguments:
+            _core.search___TDocument:
+              $ref: '#/components/schemas/_core.search___TDocument'
         - title: phrase
           $ref: '#/components/schemas/_core.search___PhraseSuggest'
         - title: term
@@ -60605,6 +60797,9 @@ components:
           properties:
             _source:
               $ref: '#/components/schemas/flow_framework.common___FlowFrameworkGetResponse'
+      x-type-arguments:
+        _core.search___TDocument:
+          $ref: '#/components/schemas/flow_framework.common___FlowFrameworkGetResponse'
     flow_framework.common___Provision:
       description: Whether to provision the workflow as part of the request.
       type: boolean
@@ -60687,6 +60882,9 @@ components:
           properties:
             _source:
               $ref: '#/components/schemas/flow_framework.common___SearchStateResponse'
+      x-type-arguments:
+        _core.search___TDocument:
+          $ref: '#/components/schemas/flow_framework.common___SearchStateResponse'
     flow_framework.common___total:
       $ref: '#/components/schemas/_core.search___TotalHits'
     flow_framework.common___UpdateFields:
@@ -67792,6 +67990,9 @@ components:
           properties:
             _source:
               $ref: '#/components/schemas/ml._common___Source'
+      x-type-arguments:
+        _core.search___TDocument:
+          $ref: '#/components/schemas/ml._common___Source'
     ml._common___SearchMemoryResponse:
       $ref: '#/components/schemas/ml._common___SearchResponse'
     ml._common___SearchMessageResponse:
@@ -67812,6 +68013,9 @@ components:
                   type: array
                   items:
                     $ref: '#/components/schemas/ml._common___SearchHitsHit'
+      x-type-arguments:
+        _core.search___TDocument:
+          $ref: '#/components/schemas/_core.search___TDocument'
     ml._common___SearchTasksResponse:
       $ref: '#/components/schemas/ml._common___SearchResponse'
     ml._common___Source:
