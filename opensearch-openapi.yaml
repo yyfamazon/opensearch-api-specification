@@ -45299,7 +45299,6 @@ components:
       anyOf:
         - allOf:
             - type: object
-            - type: object
               properties:
                 format:
                   type: string
@@ -45313,7 +45312,6 @@ components:
                   $ref: '#/components/schemas/_common___Field'
           title: field
         - allOf:
-            - type: object
             - type: object
               properties:
                 format:
@@ -48311,7 +48309,6 @@ components:
       anyOf:
         - allOf:
             - type: object
-            - type: object
               properties:
                 format:
                   type: string
@@ -48325,7 +48322,6 @@ components:
                   $ref: '#/components/schemas/_common___Field'
           title: field
         - allOf:
-            - type: object
             - type: object
               properties:
                 format:
@@ -48382,7 +48378,6 @@ components:
       anyOf:
         - allOf:
             - type: object
-            - type: object
               properties:
                 format:
                   type: string
@@ -48396,7 +48391,6 @@ components:
                   $ref: '#/components/schemas/_common___Field'
           title: field
         - allOf:
-            - type: object
             - type: object
               properties:
                 format:
@@ -48875,7 +48869,6 @@ components:
       anyOf:
         - allOf:
             - type: object
-            - type: object
               properties:
                 format:
                   type: string
@@ -48889,7 +48882,6 @@ components:
                   $ref: '#/components/schemas/_common___Field'
           title: field
         - allOf:
-            - type: object
             - type: object
               properties:
                 format:
