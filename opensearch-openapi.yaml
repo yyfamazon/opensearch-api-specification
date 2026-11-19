@@ -22808,6 +22808,7 @@ components:
           - type: array
             items:
               $ref: '#/components/schemas/cluster.reroute___Metric'
+        x-union-kind: scalar
       style: form
     cluster.reroute___query.retry_failed:
       in: query
@@ -26569,6 +26570,7 @@ components:
           - type: array
             items:
               $ref: '#/components/schemas/indices.shard_stores___ShardStoreStatus'
+        x-union-kind: scalar
       style: form
     indices.shrink___path.index:
       in: path
@@ -26811,6 +26813,7 @@ components:
           - type: array
             items:
               $ref: '#/components/schemas/indices.stats___Metric'
+        x-union-kind: scalar
       style: simple
     indices.stats___query.completion_fields:
       in: query
@@ -27873,6 +27876,7 @@ components:
             description: A comma-separated list of stats to retrieve; use `_all` or empty string to retrieve all stats.
             items:
               $ref: '#/components/schemas/knn._common___KnnStatName'
+        x-union-kind: scalar
       required: true
       style: simple
     knn.stats___query.timeout:
@@ -28620,6 +28624,7 @@ components:
             description: A comma-separated list of stats to retrieve; use `_all` or empty string to retrieve all stats.
             items:
               $ref: '#/components/schemas/ltr._common___LtrStatName'
+        x-union-kind: scalar
       required: true
       style: simple
     ltr.stats___query.timeout:
@@ -29048,6 +29053,7 @@ components:
           - type: array
             items:
               $ref: '#/components/schemas/ml._common___MlStatName'
+        x-union-kind: scalar
       style: simple
     ml.get_task___path.task_id:
       name: task_id
@@ -29449,6 +29455,7 @@ components:
           - type: array
             items:
               $ref: '#/components/schemas/neural._common___NeuralStatName'
+        x-union-kind: scalar
       required: true
       style: simple
     neural.stats___query.flat_stat_paths:
@@ -29590,6 +29597,7 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/nodes.info___Metric'
+        x-union-kind: titled
       style: simple
     nodes.info___query.flat_settings:
       in: query
@@ -33750,6 +33758,7 @@ components:
                       type: object
                       additionalProperties:
                         $ref: '#/components/schemas/_common.mapping___DynamicTemplate'
+                x-union-kind: one-or-many
               _field_names:
                 $ref: '#/components/schemas/_common.mapping___FieldNamesField'
               _meta:
@@ -35357,6 +35366,7 @@ components:
                   - type: array
                     items:
                       $ref: '#/components/schemas/_core.search___Rescore'
+                x-union-kind: one-or-many
               script_fields:
                 description: Retrieve a script evaluation (based on different fields) for each hit.
                 type: object
@@ -35475,6 +35485,7 @@ components:
               - $ref: '#/components/schemas/search_relevance._common___PutHybridOptimizerExperimentRequest'
               - $ref: '#/components/schemas/search_relevance._common___PutPointwiseExperimentRequest'
               - $ref: '#/components/schemas/search_relevance._common___PutPairwiseExperimentRequest'
+            x-union-kind: tagged
     search_relevance.put_judgments:
       content:
         application/json:
@@ -35485,6 +35496,7 @@ components:
               - $ref: '#/components/schemas/search_relevance._common___PutLLMJudgmentsRequest'
               - $ref: '#/components/schemas/search_relevance._common___PutUBIJudgmentsRequest'
               - $ref: '#/components/schemas/search_relevance._common___PutImportJudgmentsRequest'
+            x-union-kind: tagged
     search_relevance.put_query_sets:
       content:
         application/json:
@@ -41446,6 +41458,7 @@ components:
         - type: string
           const: throttled
           description: The action was throttled.
+      x-union-kind: scalar
     _common___BaseNode:
       type: object
       description: The base information about a node.
@@ -41579,6 +41592,7 @@ components:
         - title: exception
           $ref: '#/components/schemas/_common___ErrorCause'
           description: The error that occurred during the bulk by scroll task.
+      x-union-kind: titled
     _common___BulkItemResponseFailure:
       type: object
       description: The details of a bulk item operation failure.
@@ -41633,6 +41647,7 @@ components:
           enum:
             - pb
             - p
+      x-union-kind: titled
     _common___CircuitBreakerDurability:
       type: string
       description: Whether the condition that tripped the circuit breaker fixes itself eventually (`TRANSIENT`) or requires manual intervention (`PERMANENT`).
@@ -41679,6 +41694,7 @@ components:
         - type: string
           const: proceed
           description: Proceed with the operation on version conflicts.
+      x-union-kind: scalar
     _common___CoordsGeoBounds:
       type: object
       description: The geographical bounds specified using coordinate values.
@@ -41712,6 +41728,7 @@ components:
         - type: array
           items:
             $ref: '#/components/schemas/_common___DataStreamName'
+      x-union-kind: scalar
     _common___DateFormat:
       type: string
       description: The date format pattern.
@@ -41725,6 +41742,7 @@ components:
       oneOf:
         - type: string
         - $ref: '#/components/schemas/_common___EpochTimeUnitMillis'
+      x-union-kind: scalar
     _common___DerivedField:
       type: object
       properties:
@@ -41757,6 +41775,7 @@ components:
         - type: string
           const: standardized
           description: The standardized measure of independence.
+      x-union-kind: scalar
     _common___DFRAfterEffect:
       oneOf:
         - type: string
@@ -41768,6 +41787,7 @@ components:
         - type: string
           const: 'no'
           description: No after effect.
+      x-union-kind: scalar
     _common___DFRBasicModel:
       oneOf:
         - type: string
@@ -41791,6 +41811,7 @@ components:
         - type: string
           const: p
           description: The Poisson model.
+      x-union-kind: scalar
     _common___Distance:
       type: string
     _common___DistanceUnit:
@@ -41822,6 +41843,7 @@ components:
         - title: yards
           type: string
           const: yd
+      x-union-kind: titled
     _common___DocStats:
       type: object
       description: The document-level statistics.
@@ -42006,6 +42028,7 @@ components:
         - type: string
           const: open
           description: Match open, non-hidden indexes.
+      x-union-kind: scalar
     _common___ExpandWildcards:
       description: Specifies the type of index that wildcard expressions can match. Supports comma-separated values.
       oneOf:
@@ -42013,6 +42036,7 @@ components:
         - type: array
           items:
             $ref: '#/components/schemas/_common___ExpandWildcard'
+      x-union-kind: scalar
     _common___Field:
       description: The path to a field or an array of paths. Some APIs support wildcards in the path, which allows you to select multiple fields.
       type: string
@@ -42058,6 +42082,7 @@ components:
         - type: array
           items:
             $ref: '#/components/schemas/_common___Field'
+      x-union-kind: scalar
     _common___FieldSizeUsage:
       type: object
       description: The memory usage statistics for a field.
@@ -42106,6 +42131,7 @@ components:
         - type: string
           const: long
           description: The field contains long integer values.
+      x-union-kind: scalar
     _common___FieldValue:
       description: A field value.
       anyOf:
@@ -42113,6 +42139,7 @@ components:
         - type: 'null'
         - type: number
         - type: string
+      x-union-kind: scalar
     _common___FieldWithDirection:
       type: object
       additionalProperties:
@@ -42148,6 +42175,7 @@ components:
         - type: integer
           description: The fuzziness value as a numeric edit distance.
           format: int32
+      x-union-kind: scalar
     _common___GeoBounds:
       description: |-
         A geo-bounding box. It can be represented in the following ways:
@@ -42168,6 +42196,7 @@ components:
         - title: wkt
           description: The bounds specified using WKT format.
           $ref: '#/components/schemas/_common___WktGeoBounds'
+      x-union-kind: titled
     _common___GeoDistanceSort:
       type: object
       description: The options for sorting by geo distance.
@@ -42205,6 +42234,7 @@ components:
         - type: string
           const: plane
           description: The plane calculation method uses faster but less accurate flat-earth distance.
+      x-union-kind: scalar
     _common___GeoHash:
       type: string
       description: The geohash string representation of a geographical location.
@@ -42226,6 +42256,7 @@ components:
         - title: distance
           type: string
           description: The geohash precision as a distance measure.
+      x-union-kind: titled
     _common___GeoLocation:
       description: |-
         A latitude/longitude as a two-dimensional point. It can be represented in the following ways:
@@ -42249,6 +42280,7 @@ components:
         - title: text
           description: The location specified as a string in `lat,lon` or WKT format.
           type: string
+      x-union-kind: titled
     _common___GeoShapeRelation:
       oneOf:
         - type: string
@@ -42263,6 +42295,7 @@ components:
         - type: string
           const: within
           description: The shape is within the query shape.
+      x-union-kind: scalar
     _common___GeoTile:
       description: A map tile reference, represented as `{zoom}/{x}/{y}`.
       type: string
@@ -42336,6 +42369,7 @@ components:
           enum:
             - red
             - RED
+      x-union-kind: scalar
     _common___Host:
       type: string
       description: The hostname or IP address.
@@ -42356,6 +42390,7 @@ components:
         - type: string
           const: spl
           description: The smoothed power-law distribution.
+      x-union-kind: scalar
     _common___IBLambda:
       oneOf:
         - type: string
@@ -42364,6 +42399,7 @@ components:
         - type: string
           const: ttf
           description: The total term frequency Lambda.
+      x-union-kind: scalar
     _common___Id:
       type: string
       description: The unique identifier for a resource.
@@ -42375,6 +42411,7 @@ components:
           items:
             $ref: '#/components/schemas/_common___Id'
             description: An array of document IDs.
+      x-union-kind: scalar
     _common___IndexAlias:
       type: string
       description: The name of an index alias.
@@ -42459,6 +42496,7 @@ components:
         - type: array
           items:
             $ref: '#/components/schemas/_common___IndexName'
+      x-union-kind: scalar
     _common___IndicesResponseBase:
       allOf:
         - $ref: '#/components/schemas/_common___AcknowledgedResponseBase'
@@ -42541,6 +42579,7 @@ components:
                   type: string
               required:
                 - source
+      x-union-kind: shorthand
     _common___Ip:
       type: string
       description: The IP address.
@@ -42695,6 +42734,7 @@ components:
         - type: integer
           format: int32
         - type: string
+      x-union-kind: scalar
     _common___MultiTermQueryRewrite:
       type: string
     _common___Name:
@@ -42707,6 +42747,7 @@ components:
         - type: array
           items:
             $ref: '#/components/schemas/_common___Name'
+      x-union-kind: scalar
     _common___NestedSortValue:
       type: object
       properties:
@@ -42761,6 +42802,7 @@ components:
         - type: array
           items:
             $ref: '#/components/schemas/_common___NodeId'
+      x-union-kind: scalar
     _common___NodeName:
       type: string
       description: The name of the node.
@@ -42827,6 +42869,7 @@ components:
           const: warm
           description: The node can hold warm indexes for searchable snapshots. Before 3.0 this role was named `search`.
           x-version-added: '3.0'
+      x-union-kind: scalar
     _common___NodeRoles:
       description: The role assigned to the node.
       type: array
@@ -42866,6 +42909,7 @@ components:
             - $ref: '#/components/schemas/_common___NodeId'
             - type: 'null'
               description: No relocation is in progress.
+          x-union-kind: scalar
       required:
         - index
         - primary
@@ -42944,6 +42988,7 @@ components:
         - type: string
           const: index
           description: Create a new document or replace an existing one.
+      x-union-kind: scalar
     _common___Password:
       type: string
       description: The password for authentication.
@@ -43119,6 +43164,7 @@ components:
         - type: string
           const: wait_for
           description: Wait for the changes to become visible before replying.
+      x-union-kind: scalar
     _common___RefreshStats:
       type: object
       description: The statistics about refresh operations.
@@ -43429,6 +43475,7 @@ components:
         - type: string
           const: updated
           description: The document was updated.
+      x-union-kind: scalar
     _common___Retries:
       type: object
       description: The retry statistics for bulk and search operations.
@@ -43460,6 +43507,7 @@ components:
           $ref: '#/components/schemas/_common___InlineScript'
         - title: stored
           $ref: '#/components/schemas/_common___StoredScriptId'
+      x-union-kind: titled
     _common___ScriptBase:
       type: object
       properties:
@@ -43502,6 +43550,7 @@ components:
           type: string
           not:
             $ref: '#/components/schemas/_common___BuiltinScriptLanguage'
+      x-union-kind: titled
     _common___ScriptSort:
       type: object
       properties:
@@ -43532,6 +43581,7 @@ components:
         - type: string
           const: version
           description: The script returns a version value.
+      x-union-kind: scalar
     _common___ScrollableHitSourceSearchFailure:
       type: object
       description: The details of a search failure during scrolling.
@@ -43561,6 +43611,7 @@ components:
           description: A list of scroll identifiers.
           items:
             $ref: '#/components/schemas/_common___ScrollId'
+      x-union-kind: scalar
     _common___SearchStats:
       type: object
       description: The statistics about search operations.
@@ -43712,6 +43763,7 @@ components:
         - type: string
           const: query_then_fetch
           description: Documents are scored using local term and document frequencies for the shard. This is usually faster but less accurate.
+      x-union-kind: scalar
     _common___SegmentReplicationStats:
       x-version-added: 2.10.0
       oneOf:
@@ -43965,17 +44017,20 @@ components:
         - title: calculation
           $ref: '#/components/schemas/_common___SlicesCalculation'
           description: The method to calculate the number of slices.
+      x-union-kind: titled
     _common___SlicesCalculation:
       oneOf:
         - type: string
           const: auto
           description: Automatically determine the number of slices.
+      x-union-kind: scalar
     _common___Sort:
       oneOf:
         - $ref: '#/components/schemas/_common___SortCombinations'
         - type: array
           items:
             $ref: '#/components/schemas/_common___SortCombinations'
+      x-union-kind: one-or-many
     _common___SortCombinations:
       oneOf:
         - title: field
@@ -43986,6 +44041,7 @@ components:
           $ref: '#/components/schemas/_common___FieldWithOrder'
         - title: options
           $ref: '#/components/schemas/_common___SortOptions'
+      x-union-kind: titled
     _common___SortMode:
       oneOf:
         - type: string
@@ -44003,6 +44059,7 @@ components:
         - type: string
           const: sum
           description: Use the sum of all values.
+      x-union-kind: scalar
     _common___SortOptions:
       type: object
       properties:
@@ -44077,12 +44134,14 @@ components:
         - type: boolean
         - type: string
       x-protobuf-data-type: bool
+      x-union-kind: scalar
     _common___StringifiedDouble:
       oneOf:
         - type: number
           format: double
         - type: string
       x-protobuf-data-type: double
+      x-union-kind: scalar
     _common___StringifiedEpochTimeUnitMillis:
       description: |-
         Certain APIs may return values, including numbers such as epoch timestamps, as strings. This setting captures
@@ -44093,6 +44152,7 @@ components:
       oneOf:
         - $ref: '#/components/schemas/_common___EpochTimeUnitMillis'
         - type: string
+      x-union-kind: scalar
     _common___StringifiedEpochTimeUnitSeconds:
       description: |-
         Certain APIs may return values, including numbers such as epoch timestamps, as strings. This setting captures
@@ -44103,6 +44163,7 @@ components:
       oneOf:
         - $ref: '#/components/schemas/_common___EpochTimeUnitSeconds'
         - type: string
+      x-union-kind: scalar
     _common___StringifiedInteger:
       description: |-
         Certain APIs may return values, including numbers such as epoch timestamps, as strings. This setting captures
@@ -44115,12 +44176,14 @@ components:
         - type: string
           pattern: ^[+-]?\d+$
       x-protobuf-data-type: int32
+      x-union-kind: scalar
     _common___StringifiedLong:
       oneOf:
         - type: integer
           format: int64
         - type: string
       x-protobuf-data-type: int64
+      x-union-kind: scalar
     _common___StringifiedVersionNumber:
       description: |-
         Certain APIs may return values, including numbers such as epoch timestamps, as strings. This setting captures
@@ -44131,12 +44194,14 @@ components:
       oneOf:
         - $ref: '#/components/schemas/_common___VersionNumber'
         - type: string
+      x-union-kind: scalar
     _common___StringOrStringArray:
       oneOf:
         - type: string
         - type: array
           items:
             type: string
+      x-union-kind: scalar
     _common___SuggestMode:
       type: string
       enum:
@@ -44184,6 +44249,7 @@ components:
         - type: string
           const: z
           description: The Zipfian normalization.
+      x-union-kind: scalar
     _common___ThreadInfo:
       type: object
       description: The information about thread usage.
@@ -44224,6 +44290,7 @@ components:
         - title: days
           type: string
           const: d
+      x-union-kind: titled
     _common___TimeZone:
       type: string
       description: The time zone identifier.
@@ -44261,6 +44328,7 @@ components:
         - type: string
           const: gte
           description: Lower bound, including returned events or sequences.
+      x-union-kind: scalar
     _common___TranslogStats:
       type: object
       description: The statistics about translog operations.
@@ -44349,6 +44417,7 @@ components:
         - type: string
           const: internal
           description: The version number is managed internally by OpenSearch.
+      x-union-kind: scalar
     _common___Void:
       description: |-
         The absence of any type. This is commonly used in APIs that don't return a body.
@@ -44365,6 +44434,7 @@ components:
           description: Wait for all shards to be active.
         - type: 'null'
           description: null represents the default value (which defaults to one shard copy).
+      x-union-kind: scalar
     _common___WaitForActiveShards:
       description: Waits until the specified number of shards is active before returning a response. Use `all` for all shards.
       oneOf:
@@ -44374,6 +44444,7 @@ components:
         - title: option
           $ref: '#/components/schemas/_common___WaitForActiveShardOptions'
           description: Determines how many shards to wait for.
+      x-union-kind: titled
     _common___WaitForEvents:
       description: Waits until all currently queued events with the given priority are processed.
       oneOf:
@@ -44395,6 +44466,7 @@ components:
         - type: string
           const: languid
           description: Lowest priority, processed after all other events.
+      x-union-kind: scalar
     _common___WarmerStats:
       type: object
       description: The statistics about index warmer operations.
@@ -44494,6 +44566,7 @@ components:
         - title: text
           description: The location specified as a string in `x,y` or WKT format.
           type: string
+      x-union-kind: titled
     _common.aggregations___AdjacencyMatrixAggregate:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketAggregateBaseAdjacencyMatrixBucket'
@@ -44652,6 +44725,7 @@ components:
           $ref: '#/components/schemas/_common.aggregations___VariableWidthHistogramAggregate'
         - title: weighted_avg
           $ref: '#/components/schemas/_common.aggregations___WeightedAvgAggregate'
+      x-union-kind: titled
     _common.aggregations___AggregateBase:
       type: object
       properties:
@@ -44671,6 +44745,7 @@ components:
               $ref: '#/components/schemas/_common___SortOrder'
             minProperties: 1
             maxProperties: 1
+      x-union-kind: one-or-many
     _common.aggregations___Aggregation:
       type: object
       properties:
@@ -44942,6 +45017,73 @@ components:
               required:
                 - variable_width_histogram
               unevaluatedProperties: true
+          x-union-kind: container
+          x-variant-keys:
+            - adjacency_matrix
+            - auto_date_histogram
+            - avg
+            - avg_bucket
+            - boxplot
+            - bucket_script
+            - bucket_selector
+            - bucket_sort
+            - cardinality
+            - children
+            - composite
+            - cumulative_cardinality
+            - cumulative_sum
+            - date_histogram
+            - date_range
+            - derivative
+            - diversified_sampler
+            - extended_stats
+            - extended_stats_bucket
+            - filter
+            - filters
+            - geo_bounds
+            - geo_centroid
+            - geo_distance
+            - geohash_grid
+            - geotile_grid
+            - global
+            - histogram
+            - ip_range
+            - matrix_stats
+            - max
+            - max_bucket
+            - median_absolute_deviation
+            - min
+            - min_bucket
+            - missing
+            - moving_avg
+            - moving_percentiles
+            - moving_fn
+            - multi_terms
+            - nested
+            - normalize
+            - parent
+            - percentile_ranks
+            - percentiles
+            - percentiles_bucket
+            - range
+            - rare_terms
+            - rate
+            - reverse_nested
+            - sampler
+            - scripted_metric
+            - serial_diff
+            - significant_terms
+            - significant_text
+            - stats
+            - stats_bucket
+            - sum
+            - sum_bucket
+            - terms
+            - top_hits
+            - t_test
+            - value_count
+            - weighted_avg
+            - variable_width_histogram
     _common.aggregations___AggregationRange:
       type: object
       properties:
@@ -44952,6 +45094,7 @@ components:
               format: double
             - type: string
             - type: 'null'
+          x-union-kind: scalar
         key:
           description: Custom key to return the range with.
           type: string
@@ -44962,6 +45105,7 @@ components:
               format: double
             - type: string
             - type: 'null'
+          x-union-kind: scalar
     _common.aggregations___ArrayPercentilesItem:
       type: object
       properties:
@@ -44972,6 +45116,7 @@ components:
             - type: number
               format: double
             - type: 'null'
+          x-union-kind: scalar
         value_as_string:
           type: string
       required:
@@ -45154,6 +45299,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/_common.aggregations___TBucket'
+      x-union-kind: titled
     _common.aggregations___BucketScriptAggregation:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___PipelineAggregationBase'
@@ -45201,6 +45347,7 @@ components:
           type: object
           additionalProperties:
             type: string
+      x-union-kind: titled
     _common.aggregations___BucketsQueryContainer:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___Buckets'
@@ -45213,6 +45360,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/_common.query_dsl___QueryContainer'
+          x-union-kind: titled
     _common.aggregations___CalendarInterval:
       oneOf:
         - title: second
@@ -45255,6 +45403,7 @@ components:
           enum:
             - year
             - 1Y
+      x-union-kind: titled
     _common.aggregations___CardinalityAggregate:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___AggregateBase'
@@ -45675,36 +45824,43 @@ components:
                 - type: number
                   format: double
                 - type: 'null'
+              x-union-kind: scalar
             variance:
               oneOf:
                 - type: number
                   format: double
                 - type: 'null'
+              x-union-kind: scalar
             variance_population:
               oneOf:
                 - type: number
                   format: double
                 - type: 'null'
+              x-union-kind: scalar
             variance_sampling:
               oneOf:
                 - type: number
                   format: double
                 - type: 'null'
+              x-union-kind: scalar
             std_deviation:
               oneOf:
                 - type: number
                   format: double
                 - type: 'null'
+              x-union-kind: scalar
             std_deviation_population:
               oneOf:
                 - type: number
                   format: double
                 - type: 'null'
+              x-union-kind: scalar
             std_deviation_sampling:
               oneOf:
                 - type: number
                   format: double
                 - type: 'null'
+              x-union-kind: scalar
             std_deviation_bounds:
               $ref: '#/components/schemas/_common.aggregations___StandardDeviationBounds'
             sum_of_squares_as_string:
@@ -45758,6 +45914,7 @@ components:
         - title: value
           type: number
           format: double
+      x-union-kind: titled
     _common.aggregations___FilterAggregate:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___SingleBucketAggregateBase'
@@ -46143,6 +46300,7 @@ components:
         - title: multiplicative
           type: string
           const: mult
+      x-union-kind: titled
     _common.aggregations___IpRangeAggregate:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketAggregateBaseIpRangeBucket'
@@ -46200,6 +46358,7 @@ components:
             format: double
           - type: string
           - type: 'null'
+        x-union-kind: scalar
     _common.aggregations___LinearMovingAverageAggregation:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MovingAverageAggregationBase'
@@ -46254,6 +46413,7 @@ components:
           format: int64
         - title: unsigned
           type: string
+      x-union-kind: titled
     _common.aggregations___MatrixAggregation:
       type: object
       properties:
@@ -46368,6 +46528,7 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          x-union-kind: presence
     _common.aggregations___MinAggregate:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___SingleMetricAggregateBase'
@@ -46427,6 +46588,7 @@ components:
         - $ref: '#/components/schemas/_common.aggregations___EwmaMovingAverageAggregation'
         - $ref: '#/components/schemas/_common.aggregations___HoltMovingAverageAggregation'
         - $ref: '#/components/schemas/_common.aggregations___HoltWintersMovingAverageAggregation'
+      x-union-kind: tagged
     _common.aggregations___MovingAverageAggregationBase:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___PipelineAggregationBase'
@@ -46490,6 +46652,7 @@ components:
                     - type: array
                       items:
                         $ref: '#/components/schemas/_common.aggregations___TBucket'
+                  x-union-kind: keyed-or-list
           required:
             - buckets
     _common.aggregations___MultiBucketAggregateBaseAdjacencyMatrixBucket:
@@ -46509,6 +46672,7 @@ components:
                       type: array
                       items:
                         $ref: '#/components/schemas/_common.aggregations___AdjacencyMatrixBucket'
+                  x-union-kind: titled
           required:
             - buckets
     _common.aggregations___MultiBucketAggregateBaseCompositeBucket:
@@ -46526,6 +46690,7 @@ components:
                     - type: array
                       items:
                         $ref: '#/components/schemas/_common.aggregations___CompositeBucket'
+                  x-union-kind: keyed-or-list
           required:
             - buckets
     _common.aggregations___MultiBucketAggregateBaseDateHistogramBucket:
@@ -46543,6 +46708,7 @@ components:
                     - type: array
                       items:
                         $ref: '#/components/schemas/_common.aggregations___DateHistogramBucket'
+                  x-union-kind: keyed-or-list
           required:
             - buckets
     _common.aggregations___MultiBucketAggregateBaseFiltersBucket:
@@ -46560,6 +46726,7 @@ components:
                     - type: array
                       items:
                         $ref: '#/components/schemas/_common.aggregations___FiltersBucket'
+                  x-union-kind: keyed-or-list
           required:
             - buckets
     _common.aggregations___MultiBucketAggregateBaseGeoHashGridBucket:
@@ -46577,6 +46744,7 @@ components:
                     - type: array
                       items:
                         $ref: '#/components/schemas/_common.aggregations___GeoHashGridBucket'
+                  x-union-kind: keyed-or-list
           required:
             - buckets
     _common.aggregations___MultiBucketAggregateBaseGeoTileGridBucket:
@@ -46594,6 +46762,7 @@ components:
                     - type: array
                       items:
                         $ref: '#/components/schemas/_common.aggregations___GeoTileGridBucket'
+                  x-union-kind: keyed-or-list
           required:
             - buckets
     _common.aggregations___MultiBucketAggregateBaseHistogramBucket:
@@ -46611,6 +46780,7 @@ components:
                     - type: array
                       items:
                         $ref: '#/components/schemas/_common.aggregations___HistogramBucket'
+                  x-union-kind: keyed-or-list
           required:
             - buckets
     _common.aggregations___MultiBucketAggregateBaseIpRangeBucket:
@@ -46628,6 +46798,7 @@ components:
                     - type: array
                       items:
                         $ref: '#/components/schemas/_common.aggregations___IpRangeBucket'
+                  x-union-kind: keyed-or-list
           required:
             - buckets
     _common.aggregations___MultiBucketAggregateBaseLongRareTermsBucket:
@@ -46645,6 +46816,7 @@ components:
                     - type: array
                       items:
                         $ref: '#/components/schemas/_common.aggregations___LongRareTermsBucket'
+                  x-union-kind: keyed-or-list
     _common.aggregations___MultiBucketAggregateBaseRangeBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketAggregateBase'
@@ -46660,6 +46832,7 @@ components:
                     - type: array
                       items:
                         $ref: '#/components/schemas/_common.aggregations___RangeBucket'
+                  x-union-kind: keyed-or-list
           required:
             - buckets
     _common.aggregations___MultiBucketAggregateBaseStringRareTermsBucket:
@@ -46677,6 +46850,7 @@ components:
                     - type: array
                       items:
                         $ref: '#/components/schemas/_common.aggregations___StringRareTermsBucket'
+                  x-union-kind: keyed-or-list
     _common.aggregations___MultiBucketAggregateBaseVariableWidthHistogramBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketAggregateBase'
@@ -46692,6 +46866,7 @@ components:
                     - type: array
                       items:
                         $ref: '#/components/schemas/_common.aggregations___VariableWidthHistogramBucket'
+                  x-union-kind: keyed-or-list
           required:
             - buckets
     _common.aggregations___MultiBucketAggregateBaseVoid:
@@ -46709,6 +46884,7 @@ components:
                     - type: array
                       items:
                         $ref: '#/components/schemas/_common___Void'
+                  x-union-kind: keyed-or-list
     _common.aggregations___MultiBucketBase:
       type: object
       properties:
@@ -46882,6 +47058,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/_common.aggregations___ArrayPercentilesItem'
+      x-union-kind: titled
     _common.aggregations___PercentilesAggregateBase:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___AggregateBase'
@@ -47194,6 +47371,7 @@ components:
                     - type: array
                       items:
                         $ref: '#/components/schemas/_common.aggregations___SignificantLongTermsBucket'
+                  x-union-kind: keyed-or-list
     _common.aggregations___SignificantTermsAggregateBaseSignificantStringTermsBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___SignificantTermsAggregateBase'
@@ -47209,6 +47387,7 @@ components:
                     - type: array
                       items:
                         $ref: '#/components/schemas/_common.aggregations___SignificantStringTermsBucket'
+                  x-union-kind: keyed-or-list
     _common.aggregations___SignificantTermsAggregateBaseVoid:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___SignificantTermsAggregateBase'
@@ -47224,6 +47403,7 @@ components:
                     - type: array
                       items:
                         $ref: '#/components/schemas/_common___Void'
+                  x-union-kind: keyed-or-list
     _common.aggregations___SignificantTermsAggregation:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___BucketAggregationBase'
@@ -47395,6 +47575,7 @@ components:
                 - type: number
                   format: double
                 - type: 'null'
+              x-union-kind: scalar
             value_as_string:
               type: string
           required:
@@ -47407,31 +47588,37 @@ components:
             - type: number
               format: double
             - type: 'null'
+          x-union-kind: scalar
         lower:
           oneOf:
             - type: number
               format: double
             - type: 'null'
+          x-union-kind: scalar
         upper_population:
           oneOf:
             - type: number
               format: double
             - type: 'null'
+          x-union-kind: scalar
         lower_population:
           oneOf:
             - type: number
               format: double
             - type: 'null'
+          x-union-kind: scalar
         upper_sampling:
           oneOf:
             - type: number
               format: double
             - type: 'null'
+          x-union-kind: scalar
         lower_sampling:
           oneOf:
             - type: number
               format: double
             - type: 'null'
+          x-union-kind: scalar
       required:
         - lower
         - lower_population
@@ -47479,16 +47666,19 @@ components:
                 - type: number
                   format: double
                 - type: 'null'
+              x-union-kind: scalar
             max:
               oneOf:
                 - type: number
                   format: double
                 - type: 'null'
+              x-union-kind: scalar
             avg:
               oneOf:
                 - type: number
                   format: double
                 - type: 'null'
+              x-union-kind: scalar
             sum:
               type: number
               format: double
@@ -47621,6 +47811,7 @@ components:
                     - type: array
                       items:
                         $ref: '#/components/schemas/_common.aggregations___MultiTermsBucket'
+                  x-union-kind: keyed-or-list
     _common.aggregations___TermsAggregateBaseStringTermsBucket:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___TermsAggregateBase'
@@ -47726,6 +47917,7 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          x-union-kind: presence
     _common.aggregations___TermsBucketBase:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketBase'
@@ -47743,6 +47935,7 @@ components:
           type: array
           items:
             type: string
+      x-union-kind: titled
     _common.aggregations___TermsInclude:
       oneOf:
         - title: regexp
@@ -47753,6 +47946,7 @@ components:
             type: string
         - title: partition
           $ref: '#/components/schemas/_common.aggregations___TermsPartition'
+      x-union-kind: titled
     _common.aggregations___TermsPartition:
       type: object
       properties:
@@ -47837,6 +48031,7 @@ components:
                 - type: number
                   format: double
                 - type: 'null'
+              x-union-kind: scalar
             value_as_string:
               type: string
           required:
@@ -48027,6 +48222,7 @@ components:
         - $ref: '#/components/schemas/_common.analysis___CjkAnalyzer'
         - $ref: '#/components/schemas/_common.analysis___PhoneAnalyzer'
         - $ref: '#/components/schemas/_common.analysis___PhoneSearchAnalyzer'
+      x-union-kind: tagged
     _common.analysis___AsciiFoldingTokenFilter:
       allOf:
         - $ref: '#/components/schemas/_common.analysis___TokenFilterBase'
@@ -48046,6 +48242,7 @@ components:
           type: string
         - title: definition
           $ref: '#/components/schemas/_common.analysis___CharFilterDefinition'
+      x-union-kind: titled
     _common.analysis___CharFilterBase:
       type: object
       properties:
@@ -48061,6 +48258,7 @@ components:
         - $ref: '#/components/schemas/_common.analysis___PatternReplaceCharFilter'
         - $ref: '#/components/schemas/_common.analysis___IcuNormalizationCharFilter'
         - $ref: '#/components/schemas/_common.analysis___KuromojiIterationMarkCharFilter'
+      x-union-kind: tagged
     _common.analysis___CharGroupTokenizer:
       allOf:
         - $ref: '#/components/schemas/_common.analysis___TokenizerBase'
@@ -49030,6 +49228,7 @@ components:
       oneOf:
         - $ref: '#/components/schemas/_common.analysis___LowercaseNormalizer'
         - $ref: '#/components/schemas/_common.analysis___CustomNormalizer'
+      x-union-kind: tagged
     _common.analysis___PathHierarchyTokenizer:
       allOf:
         - $ref: '#/components/schemas/_common.analysis___TokenizerBase'
@@ -49618,6 +49817,7 @@ components:
           type: string
         - title: definition
           $ref: '#/components/schemas/_common.analysis___TokenFilterDefinition'
+      x-union-kind: titled
     _common.analysis___TokenFilterBase:
       type: object
       properties:
@@ -49678,12 +49878,14 @@ components:
         - $ref: '#/components/schemas/_common.analysis___PhoneticTokenFilter'
         - $ref: '#/components/schemas/_common.analysis___DictionaryDecompounderTokenFilter'
         - $ref: '#/components/schemas/_common.analysis___SmartcnStopTokenFilter'
+      x-union-kind: tagged
     _common.analysis___Tokenizer:
       oneOf:
         - title: name
           type: string
         - title: definition
           $ref: '#/components/schemas/_common.analysis___TokenizerDefinition'
+      x-union-kind: titled
     _common.analysis___TokenizerBase:
       type: object
       properties:
@@ -49711,6 +49913,7 @@ components:
         - $ref: '#/components/schemas/_common.analysis___SimplePatternSplitTokenizer'
         - $ref: '#/components/schemas/_common.analysis___IcuTokenizer'
         - $ref: '#/components/schemas/_common.analysis___SmartcnTokenizer'
+      x-union-kind: tagged
     _common.analysis___TrimTokenFilter:
       allOf:
         - $ref: '#/components/schemas/_common.analysis___TokenFilterBase'
@@ -50141,6 +50344,7 @@ components:
             - strict_allow_templates
             - 'true'
         - type: boolean
+      x-union-kind: scalar
     _common.mapping___DynamicTemplate:
       type: object
       properties:
@@ -50298,6 +50502,7 @@ components:
             - RIGHT
             - counterclockwise
             - ccw
+      x-union-kind: titled
     _common.mapping___GeoPointProperty:
       allOf:
         - $ref: '#/components/schemas/_common.mapping___DocValuesPropertyBase'
@@ -50492,6 +50697,7 @@ components:
                   - type: array
                     items:
                       $ref: '#/components/schemas/_common___RelationName'
+                x-union-kind: scalar
             eager_global_ordinals:
               type: boolean
             type:
@@ -50757,6 +50963,7 @@ components:
         - $ref: '#/components/schemas/_common.mapping___LongRangeProperty'
         - $ref: '#/components/schemas/_common.mapping___KnnVectorProperty'
         - $ref: '#/components/schemas/_common.mapping___IcuCollationKeywordProperty'
+      x-union-kind: tagged
     _common.mapping___PropertyBase:
       type: object
       properties:
@@ -50913,40 +51120,42 @@ components:
     _common.mapping___SemanticProperty:
       x-version-added: '3.1'
       type: object
-      properties:
-        type:
-          type: string
-          enum:
-            - semantic
-        raw_field_type:
-          type: string
-        model_id:
-          type: string
-        model_selection:
-          $ref: '#/components/schemas/_common.mapping___SemanticModelSelection'
-          x-version-added: '3.9'
-        search_model_id:
-          type: string
-        semantic_info_field_name:
-          type: string
-        chunking:
-          oneOf:
-            - type: boolean
-            - type: array
-              items:
-                $ref: '#/components/schemas/_common.mapping___SemanticChunkingStrategy'
-        semantic_field_search_analyzer:
-          type: string
-        dense_embedding_config:
-          $ref: '#/components/schemas/_common.mapping___SemanticDenseEmbeddingConfig'
-        sparse_encoding_config:
-          $ref: '#/components/schemas/_common.mapping___SemanticSparseEncodingConfig'
-        skip_existing_embedding:
-          type: boolean
-          default: false
-      required:
-        - type
       allOf:
+        - type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - semantic
+            raw_field_type:
+              type: string
+            model_id:
+              type: string
+            model_selection:
+              $ref: '#/components/schemas/_common.mapping___SemanticModelSelection'
+              x-version-added: '3.9'
+            search_model_id:
+              type: string
+            semantic_info_field_name:
+              type: string
+            chunking:
+              oneOf:
+                - type: boolean
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/_common.mapping___SemanticChunkingStrategy'
+              x-union-kind: scalar
+            semantic_field_search_analyzer:
+              type: string
+            dense_embedding_config:
+              $ref: '#/components/schemas/_common.mapping___SemanticDenseEmbeddingConfig'
+            sparse_encoding_config:
+              $ref: '#/components/schemas/_common.mapping___SemanticSparseEncodingConfig'
+            skip_existing_embedding:
+              type: boolean
+              default: false
+          required:
+            - type
         - anyOf:
             - type: object
               properties:
@@ -50961,6 +51170,7 @@ components:
                   $ref: '#/components/schemas/_common.mapping___SemanticModelSelection'
               required:
                 - model_selection
+          x-union-kind: presence
     _common.mapping___SemanticSparseEncodingConfig:
       type: object
       properties:
@@ -51018,6 +51228,7 @@ components:
           oneOf:
             - type: number
             - type: string
+          x-union-kind: scalar
       required:
         - name
         - type
@@ -51255,6 +51466,7 @@ components:
                 - type: array
                   items:
                     $ref: '#/components/schemas/_common.query_dsl___QueryContainer'
+              x-union-kind: one-or-many
             minimum_should_match:
               $ref: '#/components/schemas/_common___MinimumShouldMatch'
             must:
@@ -51264,6 +51476,7 @@ components:
                 - type: array
                   items:
                     $ref: '#/components/schemas/_common.query_dsl___QueryContainer'
+              x-union-kind: one-or-many
             must_not:
               description: |-
                 The clause (query) must not appear in the matching documents.
@@ -51273,6 +51486,7 @@ components:
                 - type: array
                   items:
                     $ref: '#/components/schemas/_common.query_dsl___QueryContainer'
+              x-union-kind: one-or-many
             should:
               description: The clause (query) should appear in the matching document.
               oneOf:
@@ -51280,6 +51494,7 @@ components:
                 - type: array
                   items:
                     $ref: '#/components/schemas/_common.query_dsl___QueryContainer'
+              x-union-kind: one-or-many
             adjust_pure_negative:
               description: |-
                 Ensures correct behavior when a query contains only `must_not` clauses.
@@ -51372,6 +51587,7 @@ components:
                   type: string
               required:
                 - query
+      x-union-kind: shorthand
     _common.query_dsl___ConstantScoreQuery:
       allOf:
         - $ref: '#/components/schemas/_common.query_dsl___QueryBase'
@@ -51412,10 +51628,12 @@ components:
               oneOf:
                 - $ref: '#/components/schemas/_common___DateMath'
                 - type: 'null'
+              x-union-kind: scalar
             to:
               oneOf:
                 - $ref: '#/components/schemas/_common___DateMath'
                 - type: 'null'
+              x-union-kind: scalar
             format:
               $ref: '#/components/schemas/_common___DateFormat'
             time_zone:
@@ -51518,6 +51736,7 @@ components:
               type: string
           required:
             - field
+      x-union-kind: shorthand
     _common.query_dsl___FieldLookup:
       type: object
       properties:
@@ -51658,6 +51877,7 @@ components:
                   $ref: '#/components/schemas/_common___FieldValue'
               required:
                 - value
+      x-union-kind: shorthand
     _common.query_dsl___GeoBoundingBoxQuery:
       allOf:
         - $ref: '#/components/schemas/_common.query_dsl___QueryBase'
@@ -52073,6 +52293,7 @@ components:
           type: boolean
         - title: context
           $ref: '#/components/schemas/_common.query_dsl___RescoreContext'
+      x-union-kind: titled
     _common.query_dsl___Like:
       description: Text that we want similar documents for or a lookup to a document's field for the text.
       oneOf:
@@ -52080,6 +52301,7 @@ components:
           type: string
         - title: document
           $ref: '#/components/schemas/_common.query_dsl___LikeDocument'
+      x-union-kind: titled
     _common.query_dsl___LikeDocument:
       type: object
       properties:
@@ -52153,6 +52375,7 @@ components:
                   type: string
               required:
                 - query
+      x-union-kind: shorthand
     _common.query_dsl___MatchNoneQuery:
       allOf:
         - $ref: '#/components/schemas/_common.query_dsl___QueryBase'
@@ -52183,6 +52406,7 @@ components:
                   $ref: '#/components/schemas/_common.query_dsl___ZeroTermsQuery'
               required:
                 - query
+      x-union-kind: shorthand
     _common.query_dsl___MatchPhraseQuery:
       oneOf:
         - title: query
@@ -52205,6 +52429,7 @@ components:
                   $ref: '#/components/schemas/_common.query_dsl___ZeroTermsQuery'
               required:
                 - query
+      x-union-kind: shorthand
     _common.query_dsl___MatchQuery:
       oneOf:
         - title: query
@@ -52252,6 +52477,7 @@ components:
                   $ref: '#/components/schemas/_common.query_dsl___ZeroTermsQuery'
               required:
                 - query
+      x-union-kind: shorthand
     _common.query_dsl___MoreLikeThisQuery:
       allOf:
         - $ref: '#/components/schemas/_common.query_dsl___QueryBase'
@@ -52289,6 +52515,7 @@ components:
                 - type: array
                   items:
                     $ref: '#/components/schemas/_common.query_dsl___Like'
+              x-union-kind: one-or-many
             max_doc_freq:
               description: The maximum document frequency above which the terms are ignored from the input document.
               type: integer
@@ -52333,6 +52560,7 @@ components:
                 - type: array
                   items:
                     $ref: '#/components/schemas/_common.query_dsl___Like'
+              x-union-kind: one-or-many
             version:
               $ref: '#/components/schemas/_common___VersionNumber'
             version_type:
@@ -52497,12 +52725,14 @@ components:
                   format: double
                 - type: string
                 - type: 'null'
+              x-union-kind: scalar
             to:
               oneOf:
                 - type: number
                   format: double
                 - type: string
                 - type: 'null'
+              x-union-kind: scalar
             include_lower:
               description: Include the lower bound
               type: boolean
@@ -52595,6 +52825,7 @@ components:
                   type: boolean
               required:
                 - value
+      x-union-kind: shorthand
     _common.query_dsl___QueryBase:
       type: object
       properties:
@@ -52965,6 +53196,7 @@ components:
             - type: integer
               format: int64
             - type: string
+          x-union-kind: scalar
     _common.query_dsl___RangeQuery:
       oneOf:
         - $ref: '#/components/schemas/_common.query_dsl___NumberRangeQuery'
@@ -53068,6 +53300,7 @@ components:
                   type: string
               required:
                 - value
+      x-union-kind: shorthand
     _common.query_dsl___RescoreContext:
       type: object
       properties:
@@ -53129,6 +53362,7 @@ components:
           $ref: '#/components/schemas/_common.query_dsl___SimpleQueryStringFlag'
         - title: multiple
           type: string
+      x-union-kind: titled
     _common.query_dsl___SimpleQueryStringQuery:
       allOf:
         - $ref: '#/components/schemas/_common.query_dsl___QueryBase'
@@ -53337,6 +53571,7 @@ components:
                   type: string
               required:
                 - value
+      x-union-kind: shorthand
     _common.query_dsl___SpanWithinQuery:
       allOf:
         - $ref: '#/components/schemas/_common.query_dsl___QueryBase'
@@ -53391,26 +53626,28 @@ components:
                   type: boolean
               required:
                 - value
+      x-union-kind: shorthand
     _common.query_dsl___TermsLookup:
       type: object
-      properties:
-        index:
-          $ref: '#/components/schemas/_common___IndexName'
-        id:
-          $ref: '#/components/schemas/_common___Id'
-        path:
-          $ref: '#/components/schemas/_common___Field'
-        routing:
-          $ref: '#/components/schemas/_common___Routing'
-        query:
-          $ref: '#/components/schemas/_common.query_dsl___QueryContainer'
-          x-version-added: 3.2.0
-        store:
-          type: boolean
-      required:
-        - index
-        - path
       allOf:
+        - type: object
+          properties:
+            index:
+              $ref: '#/components/schemas/_common___IndexName'
+            id:
+              $ref: '#/components/schemas/_common___Id'
+            path:
+              $ref: '#/components/schemas/_common___Field'
+            routing:
+              $ref: '#/components/schemas/_common___Routing'
+            query:
+              $ref: '#/components/schemas/_common.query_dsl___QueryContainer'
+              x-version-added: 3.2.0
+            store:
+              type: boolean
+          required:
+            - index
+            - path
         - oneOf:
             - type: object
               properties:
@@ -53425,6 +53662,7 @@ components:
               required:
                 - query
               x-version-added: 3.2.0
+          x-union-kind: presence
     _common.query_dsl___TermsQuery:
       type: object
       properties:
@@ -53451,6 +53689,7 @@ components:
             $ref: '#/components/schemas/_common___FieldValue'
         - title: lookup
           $ref: '#/components/schemas/_common.query_dsl___TermsLookup'
+      x-union-kind: titled
     _common.query_dsl___TermsQueryValueType:
       type: string
       enum:
@@ -53508,6 +53747,7 @@ components:
                 wildcard:
                   description: Wildcard pattern for terms you wish to find in the provided field. Required, when value is not set.
                   type: string
+      x-union-kind: shorthand
     _common.query_dsl___WrapperQuery:
       allOf:
         - $ref: '#/components/schemas/_common.query_dsl___QueryBase'
@@ -53942,6 +54182,7 @@ components:
             oneOf:
               - type: string
               - type: object
+            x-union-kind: shorthand
         profile:
           description: When `true`, provides a profile for the query execution.
           type: boolean
@@ -53986,6 +54227,7 @@ components:
             - type: array
               items:
                 $ref: '#/components/schemas/_common.query_dsl___KnnQuery'
+          x-union-kind: one-or-many
         from:
           description: |-
             The starting document offset. By default, you cannot page through more than 10,000
@@ -54016,6 +54258,7 @@ components:
             - type: array
               items:
                 $ref: '#/components/schemas/_core.search___Rescore'
+          x-union-kind: one-or-many
         script_fields:
           description: Retrieves a script evaluation (based on different fields) for each hit.
           type: object
@@ -54760,6 +55003,7 @@ components:
           const: fvh
         - type: string
           const: unified
+      x-union-kind: scalar
     _core.search___Collector:
       type: object
       properties:
@@ -54819,6 +55063,7 @@ components:
                         properties:
                           _source:
                             $ref: '#/components/schemas/_core.search___TDocument'
+              x-union-kind: one-or-many
           required:
             - options
     _core.search___CompletionSuggester:
@@ -54877,6 +55122,7 @@ components:
           type: string
         - title: location
           $ref: '#/components/schemas/_common___GeoLocation'
+      x-union-kind: titled
     _core.search___DirectGenerator:
       type: object
       properties:
@@ -54982,6 +55228,7 @@ components:
             - type: array
               items:
                 $ref: '#/components/schemas/_core.search___InnerHits'
+          x-union-kind: one-or-many
         max_concurrent_group_searches:
           description: The number of concurrent requests that are allowed to be retrieved by the `inner_hits` parameter per group.
           type: integer
@@ -55135,6 +55382,7 @@ components:
           $ref: '#/components/schemas/_core.search___BuiltinHighlighterType'
         - title: custom
           type: string
+      x-union-kind: titled
     _core.search___HighlightField:
       allOf:
         - $ref: '#/components/schemas/_core.search___HighlightBase'
@@ -55156,6 +55404,7 @@ components:
             minProperties: 1
             maxProperties: 1
           x-protobuf-excluded: true
+      x-union-kind: shorthand
     _core.search___Hit:
       type: object
       properties:
@@ -55170,6 +55419,7 @@ components:
             - type: 'null'
             - type: number
               format: float
+          x-union-kind: scalar
         _explanation:
           $ref: '#/components/schemas/_core.explain___Explanation'
         fields:
@@ -55199,6 +55449,7 @@ components:
               additionalProperties:
                 type: number
                 format: float
+          x-union-kind: titled
         _nested:
           $ref: '#/components/schemas/_core.search___NestedIdentity'
         _ignored:
@@ -55243,6 +55494,7 @@ components:
             - $ref: '#/components/schemas/_core.search___TotalHits'
             - type: integer
               format: int64
+          x-union-kind: shorthand
         hits:
           type: array
           items:
@@ -55257,6 +55509,7 @@ components:
             - type: 'null'
             - type: number
               format: float
+          x-union-kind: scalar
       required:
         - hits
         - max_score
@@ -55373,6 +55626,7 @@ components:
                 - type: array
                   items:
                     $ref: '#/components/schemas/_core.search___PhraseSuggestOption'
+              x-union-kind: one-or-many
           required:
             - options
     _core.search___PhraseSuggestCollate:
@@ -55748,10 +56002,12 @@ components:
                                       - type: object
                                         properties:
                                           _source: {}
+                              x-union-kind: one-or-many
                     - title: phrase
                       $ref: '#/components/schemas/_core.search___PhraseSuggest'
                     - title: term
                       $ref: '#/components/schemas/_core.search___TermSuggest'
+                  x-union-kind: titled
     _core.search___ShardProfile:
       type: object
       properties:
@@ -55789,6 +56045,7 @@ components:
           type: boolean
         - title: filter
           $ref: '#/components/schemas/_core.search___SourceFilter'
+      x-union-kind: titled
     _core.search___SourceConfigParam:
       description: |-
         Defines how to fetch a source. Fetching can be disabled entirely, or the source can be filtered.
@@ -55798,6 +56055,7 @@ components:
           type: boolean
         - title: fields
           $ref: '#/components/schemas/_common___Fields'
+      x-union-kind: titled
     _core.search___SourceFilter:
       oneOf:
         - title: includes
@@ -55808,6 +56066,7 @@ components:
               $ref: '#/components/schemas/_common___Fields'
             includes:
               $ref: '#/components/schemas/_common___Fields'
+      x-union-kind: shorthand
     _core.search___StringDistance:
       type: string
       enum:
@@ -55847,11 +56106,13 @@ components:
                             properties:
                               _source:
                                 $ref: '#/components/schemas/_core.search___TDocument'
+                  x-union-kind: one-or-many
         - title: phrase
           $ref: '#/components/schemas/_core.search___PhraseSuggest'
         - title: term
           $ref: '#/components/schemas/_core.search___TermSuggest'
       x-supports-typed-keys: true
+      x-union-kind: titled
     _core.search___SuggestBase:
       type: object
       properties:
@@ -55929,6 +56190,7 @@ components:
                 - type: array
                   items:
                     $ref: '#/components/schemas/_core.search___TermSuggestOption'
+              x-union-kind: one-or-many
           required:
             - options
     _core.search___TermSuggester:
@@ -56008,6 +56270,7 @@ components:
         - title: count
           type: integer
           format: int32
+      x-union-kind: titled
     _core.termvectors___FieldStatistics:
       type: object
       properties:
@@ -56391,16 +56654,19 @@ components:
           oneOf:
             - $ref: '#/components/schemas/_common___PercentageString'
             - type: 'null'
+          x-union-kind: scalar
         host:
           description: Network host for the node. Set using the `network.host` setting.
           oneOf:
             - $ref: '#/components/schemas/_common___Host'
             - type: 'null'
+          x-union-kind: scalar
         ip:
           description: IP address and port for the node.
           oneOf:
             - $ref: '#/components/schemas/_common___Ip'
             - type: 'null'
+          x-union-kind: scalar
         node:
           description: Name for the node. Set using the `node.name` setting.
           type: string
@@ -58573,6 +58839,7 @@ components:
           anyOf:
             - $ref: '#/components/schemas/_common___VersionString'
             - type: 'null'
+          x-union-kind: scalar
         composed_of:
           description: The component templates that comprise the index template.
           type: string
@@ -58743,6 +59010,7 @@ components:
           format: int32
         - title: comparison
           type: string
+      x-union-kind: titled
     cluster.allocation_explain___AllocationDecision:
       type: object
       properties:
@@ -58798,6 +59066,7 @@ components:
             oneOf:
               - $ref: '#/components/schemas/_common___ByteCount'
               - $ref: '#/components/schemas/_common___HumanReadableByteCount'
+            x-union-kind: scalar
         shard_data_set_sizes:
           type: object
           additionalProperties:
@@ -59002,6 +59271,7 @@ components:
         - type: string
           const: FAILED
           description: Decommission request failed.
+      x-union-kind: scalar
     cluster.health___AwarenessAttributeStats:
       type: object
       x-version-added: '2.5'
@@ -59230,6 +59500,7 @@ components:
       oneOf:
         - $ref: '#/components/schemas/cluster.remote_info___ClusterRemoteSniffInfo'
         - $ref: '#/components/schemas/cluster.remote_info___ClusterRemoteProxyInfo'
+      x-union-kind: tagged
     cluster.remote_info___ClusterRemoteProxyInfo:
       type: object
       properties:
@@ -59436,6 +59707,7 @@ components:
         - type: string
           const: version
           description: Returns the cluster state version.
+      x-union-kind: scalar
     cluster.reroute___RerouteDecision:
       type: object
       properties:
@@ -60321,6 +60593,7 @@ components:
             - type: number
               format: float
               description: The maximum score of the search hits.
+          x-union-kind: scalar
         hits:
           type: array
           items:
@@ -60381,6 +60654,7 @@ components:
             - type: array
               items:
                 $ref: '#/components/schemas/flow_framework.common___ResourcesCreated'
+          x-union-kind: one-or-many
     flow_framework.common___SearchWorkflowRequest:
       type: object
       properties:
@@ -60400,6 +60674,7 @@ components:
             - type: number
               format: float
               description: The maximum score across all search hits.
+          x-union-kind: scalar
         hits:
           description: The list of search hits.
           type: array
@@ -61214,6 +61489,7 @@ components:
         - description: Uses NIO file system implementation.
           const: niofs
           type: string
+      x-union-kind: scalar
     indices._common___DataStream:
       type: object
       properties:
@@ -61374,6 +61650,7 @@ components:
             - type: string
             - type: integer
               format: int64
+          x-union-kind: scalar
     indices._common___IndexingSlowlog:
       type: object
       description: The configuration for indexing slow log.
@@ -61458,6 +61735,7 @@ components:
         - description: Allows shard allocation only for primary shards.
           const: primaries
           type: string
+      x-union-kind: scalar
     indices._common___IndexRoutingRebalance:
       type: object
       description: The configuration for shard rebalancing.
@@ -61481,6 +61759,7 @@ components:
         - description: Allows rebalancing of replica shards only.
           const: replicas
           type: string
+      x-union-kind: scalar
     indices._common___IndexSegmentSort:
       type: object
       description: The configuration for segment sorting.
@@ -61493,18 +61772,21 @@ components:
             - type: array
               items:
                 $ref: '#/components/schemas/indices._common___SegmentSortOrder'
+          x-union-kind: scalar
         mode:
           oneOf:
             - $ref: '#/components/schemas/indices._common___SegmentSortMode'
             - type: array
               items:
                 $ref: '#/components/schemas/indices._common___SegmentSortMode'
+          x-union-kind: scalar
         missing:
           oneOf:
             - $ref: '#/components/schemas/indices._common___SegmentSortMissing'
             - type: array
               items:
                 $ref: '#/components/schemas/indices._common___SegmentSortMissing'
+          x-union-kind: scalar
     indices._common___IndexSettingBlocks:
       description: The block settings that control index operations.
       type: object
@@ -61900,6 +62182,7 @@ components:
           $ref: '#/components/schemas/indices._common___IndexSettingsMergePolicyName'
         - title: tiered_policy_config
           $ref: '#/components/schemas/indices._common___IndexSettingsMergeTieredPolicy'
+      x-union-kind: titled
     indices._common___IndexSettingsMergePolicyName:
       type: string
       description: The type of merge policy.
@@ -62230,6 +62513,7 @@ components:
         - description: Uses simple file system locks.
           const: simple
           type: string
+      x-union-kind: scalar
     indices._common___IndexSettingsStoreHybrid:
       type: object
       description: The hybrid storage type configuration.
@@ -62489,6 +62773,7 @@ components:
         - description: Disables field data.
           const: disabled
           type: string
+      x-union-kind: scalar
     indices._common___ReplicationType:
       type: string
       enum:
@@ -62581,6 +62866,7 @@ components:
           $ref: '#/components/schemas/indices._common___BuiltinStorageType'
         - title: custom
           type: string
+      x-union-kind: titled
     indices._common___TemplateMapping:
       type: object
       description: The mapping configuration for a template.
@@ -62643,6 +62929,7 @@ components:
         - description: Request durability (lowercase variant).
           const: request
           type: string
+      x-union-kind: scalar
     indices._common___TranslogRetention:
       type: object
       description: The retention configuration for the translog.
@@ -62684,6 +62971,7 @@ components:
         - description: Blocks write operations on the index.
           const: write
           type: string
+      x-union-kind: scalar
     indices.add_block___IndicesBlockStatus:
       description: The status of a block operation on an index.
       type: object
@@ -63342,6 +63630,7 @@ components:
                 items:
                   $ref: '#/components/schemas/indices.segments___ShardsSegment'
               - $ref: '#/components/schemas/indices.segments___ShardsSegment'
+            x-union-kind: one-or-many
       required:
         - shards
     indices.segments___Segment:
@@ -63470,6 +63759,7 @@ components:
         - description: The store is not currently in use.
           const: unused
           type: string
+      x-union-kind: scalar
     indices.shard_stores___ShardStoreException:
       description: The exception information for a shard store.
       type: object
@@ -63498,6 +63788,7 @@ components:
         - type: string
           const: yellow
           description: One or more replica shards are unassigned.
+      x-union-kind: scalar
     indices.shard_stores___ShardStoreWrapper:
       description: The wrapper containing store information for a shard.
       type: object
@@ -63827,6 +64118,7 @@ components:
             - type: array
               items:
                 $ref: '#/components/schemas/_common___IndexAlias'
+          x-union-kind: scalar
         filter:
           $ref: '#/components/schemas/_common.query_dsl___QueryContainer'
         index:
@@ -63861,6 +64153,7 @@ components:
             - type: array
               items:
                 $ref: '#/components/schemas/_common___IndexAlias'
+          x-union-kind: scalar
         index:
           $ref: '#/components/schemas/_common___IndexName'
         indices:
@@ -65512,6 +65805,7 @@ components:
             - $ref: '#/components/schemas/ism._common___ErrorNotification'
             - type: 'null'
           description: The configuration for error notifications.
+          x-union-kind: shorthand
         default_state:
           type: string
           description: The default state an index is in.
@@ -65528,6 +65822,7 @@ components:
               items:
                 $ref: '#/components/schemas/ism._common___IsmTemplate'
           description: The ISM template configuration.
+          x-union-kind: shorthand
     ism._common___PolicyEnvelope:
       type: object
       properties:
@@ -65978,6 +66273,7 @@ components:
               oneOf:
                 - $ref: '#/components/schemas/_common___HealthStatus'
                 - type: 'null'
+              x-union-kind: scalar
             nodes:
               type: object
               additionalProperties:
@@ -67640,6 +67936,7 @@ components:
             - type: integer
               format: int64
           description: The create time.
+          x-union-kind: scalar
         application_type:
           type:
             - 'null'
@@ -68191,6 +68488,7 @@ components:
                 stat_type:
                   type: string
                   const: info_counter
+      x-union-kind: shorthand
     neural._common___InfoStringStat:
       oneOf:
         - type: string
@@ -68201,6 +68499,7 @@ components:
                 stat_type:
                   type: string
                   const: info_string
+      x-union-kind: shorthand
     neural._common___MemoryStat:
       oneOf:
         - type: number
@@ -68211,6 +68510,7 @@ components:
                 stat_type:
                   type: string
                   const: memory
+      x-union-kind: shorthand
     neural._common___NestedNeuralInfoStats:
       type: object
       properties:
@@ -68612,6 +68912,7 @@ components:
             - type: integer
             - type: number
             - type: string
+          x-union-kind: scalar
         stat_type:
           type: string
     neural._common___TimestampedEventCounterStat:
@@ -68628,6 +68929,7 @@ components:
                   type: integer
                 minutes_since_last_event:
                   type: integer
+      x-union-kind: shorthand
     nodes._common___NodesResponseBase:
       description: Provides base response structure for node-related operations.
       type: object
@@ -68648,6 +68950,7 @@ components:
         - description: Samples process wait times.
           const: wait
           type: string
+      x-union-kind: scalar
     nodes.info___Metric:
       description: The nodes metrics to retrieve.
       oneOf:
@@ -68690,6 +68993,7 @@ components:
         - description: Returns transport layer information.
           const: transport
           type: string
+      x-union-kind: scalar
     nodes.info___NodeInfo:
       type: object
       properties:
@@ -68743,12 +69047,14 @@ components:
               x-version-removed: '3.0'
             - $ref: '#/components/schemas/_common___HumanReadableByteCount'
               x-version-added: '3.0'
+          x-union-kind: scalar
         total_indexing_buffer_in_bytes:
           oneOf:
             - $ref: '#/components/schemas/_common___HumanReadableByteCount'
               x-version-removed: '3.0'
             - $ref: '#/components/schemas/_common___ByteCount'
               x-version-added: '3.0'
+          x-union-kind: scalar
         transport:
           $ref: '#/components/schemas/nodes.info___NodeInfoTransport'
         transport_address:
@@ -69235,6 +69541,7 @@ components:
           type: string
         - title: config
           $ref: '#/components/schemas/nodes.info___NodeInfoSettingsHttpTypeConfig'
+      x-union-kind: titled
     nodes.info___NodeInfoSettingsHttpTypeConfig:
       type: object
       description: The HTTP server type configuration details.
@@ -69412,6 +69719,7 @@ components:
           type: string
         - title: config
           $ref: '#/components/schemas/nodes.info___NodeInfoSettingsTransportTypeConfig'
+      x-union-kind: titled
     nodes.info___NodeInfoSettingsTransportTypeConfig:
       description: The detailed transport type configuration.
       type: object
@@ -71056,6 +71364,7 @@ components:
             - type: array
               items:
                 $ref: '#/components/schemas/_common___Ip'
+          x-union-kind: scalar
         jvm:
           $ref: '#/components/schemas/nodes.stats___Jvm'
         name:
@@ -72682,6 +72991,10 @@ components:
               $ref: '#/components/schemas/search_pipeline._common___ScoreRankerPhaseResultsProcessor'
           required:
             - score-ranker-processor
+      x-union-kind: container
+      x-variant-keys:
+        - normalization-processor
+        - score-ranker-processor
     search_pipeline._common___RenameFieldResponseProcessor:
       type: object
       properties:
@@ -72744,6 +73057,14 @@ components:
               $ref: '#/components/schemas/search_pipeline._common___MLInferenceRequestProcessor'
           required:
             - ml_inference
+      x-union-kind: container
+      x-variant-keys:
+        - agentic_query_translator
+        - filter_query
+        - neural_query_enricher
+        - script
+        - oversample
+        - ml_inference
     search_pipeline._common___RerankContext:
       type: object
       properties:
@@ -72832,6 +73153,17 @@ components:
               $ref: '#/components/schemas/search_pipeline._common___SplitResponseProcessor'
           required:
             - split
+      x-union-kind: container
+      x-variant-keys:
+        - agentic_context
+        - personalize_search_ranking
+        - retrieval_augmented_generation
+        - rename_field
+        - rerank
+        - collapse
+        - truncate_hits
+        - sort
+        - split
     search_pipeline._common___RetrievalAugmentedGenerationResponseProcessor:
       type: object
       properties:
@@ -72919,6 +73251,7 @@ components:
           x-version-added: '2.18'
         - title: pipeline_definition
           $ref: '#/components/schemas/search_pipeline._common___SearchPipelineStructure'
+      x-union-kind: titled
     search_pipeline._common___SearchPipelineStructure:
       type: object
       properties:
@@ -74961,6 +75294,7 @@ components:
         - type: string
           const: STARTED
           description: The number of shards in the snapshot that are in the started stage of being stored in the repository.
+      x-union-kind: scalar
     snapshot._common___SnapshotShardsStatsSummary:
       type: object
       properties:
@@ -75168,6 +75502,7 @@ components:
             - type: string
             - type: integer
           description: The maximum result set size.
+          x-union-kind: scalar
     sql._common___Ppl:
       type: object
       properties:
@@ -75176,6 +75511,7 @@ components:
             - type: boolean
             - type: string
           description: Whether the PPL plugin is enabled.
+          x-union-kind: scalar
     sql._common___Query:
       type: object
       properties:
@@ -75239,11 +75575,13 @@ components:
             - type: boolean
             - type: string
           description: Whether the SQL plugin is enabled.
+          x-union-kind: scalar
         slowlog:
           anyOf:
             - type: integer
             - type: string
           description: The threshold in milliseconds for logging slow queries.
+          x-union-kind: scalar
         cursor:
           $ref: '#/components/schemas/sql._common___Cursor'
     sql._common___SqlClose:
@@ -75440,6 +75778,7 @@ components:
           type: object
           additionalProperties:
             $ref: '#/components/schemas/tasks._common___TaskGroup'
+      x-union-kind: titled
     tasks._common___TaskListResponseBase:
       type: object
       properties:
@@ -75461,6 +75800,7 @@ components:
     tasks._common___TaskResponse:
       anyOf:
         - $ref: '#/components/schemas/_common___BulkByScrollResponseBase'
+      x-union-kind: shorthand
     transforms._common___ContinuousStats:
       type: object
       properties:
@@ -75494,6 +75834,7 @@ components:
           oneOf:
             - $ref: '#/components/schemas/transforms._common___TransformMetadata'
             - type: 'null'
+          x-union-kind: shorthand
     transforms._common___ExplainResponse:
       type: object
       additionalProperties:
@@ -75803,6 +76144,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/wlm._common___WlmStatsRecord'
+      x-union-kind: shorthand
     wlm._common___WlmStatsRecord:
       type: object
       description: A tabular row of workload management statistics for a node and workload group.
@@ -75876,6 +76218,7 @@ components:
         - type: array
           items:
             $ref: '#/components/schemas/wlm._common___WorkloadGroupId'
+      x-union-kind: scalar
     wlm._common___WorkloadGroupResourceLimits:
       description: Resource limits for a workload group. At least one of `memory` or `cpu` is required.
       allOf:
@@ -75887,6 +76230,7 @@ components:
             - type: object
               required:
                 - cpu
+          x-union-kind: presence
     wlm._common___WorkloadGroupResponse:
       type: object
       properties:
