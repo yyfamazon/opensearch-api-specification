@@ -45311,6 +45311,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
             - type: object
@@ -45325,6 +45326,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___AverageBucketAggregation:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___PipelineAggregationBase'
@@ -45397,6 +45400,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
               properties:
@@ -45412,6 +45416,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___BucketAggregationBase:
       type: object
       properties:
@@ -45611,6 +45617,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
               properties:
@@ -45630,6 +45637,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___CardinalityExecutionMode:
       type: string
       enum:
@@ -46107,6 +46116,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
               properties:
@@ -46126,6 +46136,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___ExtendedStatsBucketAggregate:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___ExtendedStatsAggregateBase'
@@ -46213,6 +46225,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
               properties:
@@ -46226,6 +46239,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___FormattableMetricAggregation:
       anyOf:
         - allOf:
@@ -46241,6 +46256,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
               properties:
@@ -46254,6 +46270,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___GapPolicy:
       type: string
       enum:
@@ -46283,6 +46301,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
               properties:
@@ -46297,6 +46316,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___GeoCentroidAggregate:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___AggregateBase'
@@ -46327,6 +46348,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
               properties:
@@ -46343,6 +46365,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___GeoDistanceAggregate:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___RangeAggregateBase'
@@ -46831,6 +46855,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
               properties:
@@ -46848,6 +46873,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___MaxBucketAggregation:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___PipelineAggregationBase'
@@ -46876,6 +46903,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
               properties:
@@ -46895,6 +46923,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___MetricAggregationBase:
       anyOf:
         - allOf:
@@ -46906,6 +46936,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
               properties:
@@ -46915,6 +46946,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___MinAggregate:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___SingleMetricAggregateBase'
@@ -46937,6 +46970,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
               properties:
@@ -46954,6 +46988,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___MinBucketAggregation:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___PipelineAggregationBase'
@@ -47477,6 +47513,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
               properties:
@@ -47507,6 +47544,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___Percentiles:
       oneOf:
         - title: keyed
@@ -47557,6 +47596,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
               properties:
@@ -47587,6 +47627,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___PercentilesBucketAggregate:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___PercentilesAggregateBase'
@@ -47735,6 +47777,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
               properties:
@@ -47754,6 +47797,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___RateMode:
       type: string
       enum:
@@ -47845,6 +47890,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
               properties:
@@ -47870,6 +47916,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___SerialDifferencingAggregation:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___PipelineAggregationBase'
@@ -48275,6 +48323,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
             - type: object
@@ -48289,6 +48338,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___StatsBucketAggregate:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___StatsAggregateBase'
@@ -48343,6 +48394,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
             - type: object
@@ -48357,6 +48409,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___SumBucketAggregation:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___PipelineAggregationBase'
@@ -48528,6 +48582,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
               properties:
@@ -48573,6 +48628,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___TermsBucketBase:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___MultiBucketBase'
@@ -48684,6 +48741,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
               properties:
@@ -48730,6 +48788,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___TTestAggregate:
       allOf:
         - $ref: '#/components/schemas/_common.aggregations___AggregateBase'
@@ -48827,6 +48887,7 @@ components:
               properties:
                 field:
                   $ref: '#/components/schemas/_common___Field'
+          title: field
         - allOf:
             - type: object
             - type: object
@@ -48841,6 +48902,8 @@ components:
               properties:
                 script:
                   $ref: '#/components/schemas/_common___Script'
+          title: script
+      x-union-kind: titled
     _common.aggregations___ValueType:
       type: string
       description: |-
@@ -51855,85 +51918,49 @@ components:
     _common.mapping___SemanticProperty:
       x-version-added: '3.1'
       type: object
-      anyOf:
-        - allOf:
-            - type: object
-              properties:
-                type:
-                  type: string
-                  enum:
-                    - semantic
-                raw_field_type:
-                  type: string
-                model_id:
-                  type: string
-                model_selection:
-                  $ref: '#/components/schemas/_common.mapping___SemanticModelSelection'
-                  x-version-added: '3.9'
-                search_model_id:
-                  type: string
-                semantic_info_field_name:
-                  type: string
-                chunking:
-                  oneOf:
-                    - type: boolean
-                    - type: array
-                      items:
-                        $ref: '#/components/schemas/_common.mapping___SemanticChunkingStrategy'
-                  x-union-kind: scalar
-                semantic_field_search_analyzer:
-                  type: string
-                dense_embedding_config:
-                  $ref: '#/components/schemas/_common.mapping___SemanticDenseEmbeddingConfig'
-                sparse_encoding_config:
-                  $ref: '#/components/schemas/_common.mapping___SemanticSparseEncodingConfig'
-                skip_existing_embedding:
-                  type: boolean
-                  default: false
-              required:
-                - type
+      allOf:
+        - type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - semantic
+            raw_field_type:
+              type: string
+            model_id:
+              type: string
+            model_selection:
+              $ref: '#/components/schemas/_common.mapping___SemanticModelSelection'
+              x-version-added: '3.9'
+            search_model_id:
+              type: string
+            semantic_info_field_name:
+              type: string
+            chunking:
+              oneOf:
+                - type: boolean
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/_common.mapping___SemanticChunkingStrategy'
+              x-union-kind: scalar
+            semantic_field_search_analyzer:
+              type: string
+            dense_embedding_config:
+              $ref: '#/components/schemas/_common.mapping___SemanticDenseEmbeddingConfig'
+            sparse_encoding_config:
+              $ref: '#/components/schemas/_common.mapping___SemanticSparseEncodingConfig'
+            skip_existing_embedding:
+              type: boolean
+              default: false
+          required:
+            - type
+        - anyOf:
             - type: object
               properties:
                 model_id:
                   type: string
               required:
                 - model_id
-        - allOf:
-            - type: object
-              properties:
-                type:
-                  type: string
-                  enum:
-                    - semantic
-                raw_field_type:
-                  type: string
-                model_id:
-                  type: string
-                model_selection:
-                  $ref: '#/components/schemas/_common.mapping___SemanticModelSelection'
-                  x-version-added: '3.9'
-                search_model_id:
-                  type: string
-                semantic_info_field_name:
-                  type: string
-                chunking:
-                  oneOf:
-                    - type: boolean
-                    - type: array
-                      items:
-                        $ref: '#/components/schemas/_common.mapping___SemanticChunkingStrategy'
-                  x-union-kind: scalar
-                semantic_field_search_analyzer:
-                  type: string
-                dense_embedding_config:
-                  $ref: '#/components/schemas/_common.mapping___SemanticDenseEmbeddingConfig'
-                sparse_encoding_config:
-                  $ref: '#/components/schemas/_common.mapping___SemanticSparseEncodingConfig'
-                skip_existing_embedding:
-                  type: boolean
-                  default: false
-              required:
-                - type
             - type: object
               x-version-added: '3.9'
               properties:
@@ -51941,6 +51968,7 @@ components:
                   $ref: '#/components/schemas/_common.mapping___SemanticModelSelection'
               required:
                 - model_selection
+          x-union-kind: presence
     _common.mapping___SemanticSparseEncodingConfig:
       type: object
       properties:
@@ -54399,51 +54427,32 @@ components:
       x-union-kind: shorthand
     _common.query_dsl___TermsLookup:
       type: object
-      oneOf:
-        - allOf:
-            - type: object
-              properties:
-                index:
-                  $ref: '#/components/schemas/_common___IndexName'
-                id:
-                  $ref: '#/components/schemas/_common___Id'
-                path:
-                  $ref: '#/components/schemas/_common___Field'
-                routing:
-                  $ref: '#/components/schemas/_common___Routing'
-                query:
-                  $ref: '#/components/schemas/_common.query_dsl___QueryContainer'
-                  x-version-added: 3.2.0
-                store:
-                  type: boolean
-              required:
-                - index
-                - path
+      allOf:
+        - type: object
+          properties:
+            index:
+              $ref: '#/components/schemas/_common___IndexName'
+            id:
+              $ref: '#/components/schemas/_common___Id'
+            path:
+              $ref: '#/components/schemas/_common___Field'
+            routing:
+              $ref: '#/components/schemas/_common___Routing'
+            query:
+              $ref: '#/components/schemas/_common.query_dsl___QueryContainer'
+              x-version-added: 3.2.0
+            store:
+              type: boolean
+          required:
+            - index
+            - path
+        - oneOf:
             - type: object
               properties:
                 id:
                   $ref: '#/components/schemas/_common___Id'
               required:
                 - id
-        - allOf:
-            - type: object
-              properties:
-                index:
-                  $ref: '#/components/schemas/_common___IndexName'
-                id:
-                  $ref: '#/components/schemas/_common___Id'
-                path:
-                  $ref: '#/components/schemas/_common___Field'
-                routing:
-                  $ref: '#/components/schemas/_common___Routing'
-                query:
-                  $ref: '#/components/schemas/_common.query_dsl___QueryContainer'
-                  x-version-added: 3.2.0
-                store:
-                  type: boolean
-              required:
-                - index
-                - path
             - type: object
               properties:
                 query:
@@ -54451,6 +54460,7 @@ components:
               required:
                 - query
               x-version-added: 3.2.0
+          x-union-kind: presence
     _common.query_dsl___TermsQuery:
       type: object
       properties:
@@ -77009,17 +77019,16 @@ components:
       x-union-kind: scalar
     wlm._common___WorkloadGroupResourceLimits:
       description: Resource limits for a workload group. At least one of `memory` or `cpu` is required.
-      anyOf:
-        - allOf:
-            - $ref: '#/components/schemas/wlm._common___ResourceLimitsSchema'
+      allOf:
+        - $ref: '#/components/schemas/wlm._common___ResourceLimitsSchema'
+        - anyOf:
             - type: object
               required:
                 - memory
-        - allOf:
-            - $ref: '#/components/schemas/wlm._common___ResourceLimitsSchema'
             - type: object
               required:
                 - cpu
+          x-union-kind: presence
     wlm._common___WorkloadGroupResponse:
       type: object
       properties:
