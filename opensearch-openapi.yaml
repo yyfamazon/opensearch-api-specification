@@ -44732,8 +44732,48 @@ components:
         - $ref: '#/components/schemas/_common.aggregations___Aggregation'
         - type: object
           oneOf:
-            - $ref: '#/components/schemas/_common.aggregations___AdjacencyMatrixAggregation'
-            - $ref: '#/components/schemas/_common.aggregations___AutoDateHistogramAggregation'
+            - allOf:
+                - type: object
+                  properties:
+                    adjacency_matrix:
+                      $ref: '#/components/schemas/_common.aggregations___AdjacencyMatrixAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - adjacency_matrix
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
+            - allOf:
+                - type: object
+                  properties:
+                    auto_date_histogram:
+                      $ref: '#/components/schemas/_common.aggregations___AutoDateHistogramAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - auto_date_histogram
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
             - type: object
               properties:
                 avg:
@@ -44776,8 +44816,48 @@ components:
                   $ref: '#/components/schemas/_common.aggregations___CardinalityAggregation'
               required:
                 - cardinality
-            - $ref: '#/components/schemas/_common.aggregations___ChildrenAggregation'
-            - $ref: '#/components/schemas/_common.aggregations___CompositeAggregation'
+            - allOf:
+                - type: object
+                  properties:
+                    children:
+                      $ref: '#/components/schemas/_common.aggregations___ChildrenAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - children
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
+            - allOf:
+                - type: object
+                  properties:
+                    composite:
+                      $ref: '#/components/schemas/_common.aggregations___CompositeAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - composite
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
             - type: object
               properties:
                 cumulative_cardinality:
@@ -44790,15 +44870,75 @@ components:
                   $ref: '#/components/schemas/_common.aggregations___CumulativeSumAggregation'
               required:
                 - cumulative_sum
-            - $ref: '#/components/schemas/_common.aggregations___DateHistogramAggregation'
-            - $ref: '#/components/schemas/_common.aggregations___DateRangeAggregation'
+            - allOf:
+                - type: object
+                  properties:
+                    date_histogram:
+                      $ref: '#/components/schemas/_common.aggregations___DateHistogramAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - date_histogram
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
+            - allOf:
+                - type: object
+                  properties:
+                    date_range:
+                      $ref: '#/components/schemas/_common.aggregations___DateRangeAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - date_range
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
             - type: object
               properties:
                 derivative:
                   $ref: '#/components/schemas/_common.aggregations___DerivativeAggregation'
               required:
                 - derivative
-            - $ref: '#/components/schemas/_common.aggregations___DiversifiedSamplerAggregation'
+            - allOf:
+                - type: object
+                  properties:
+                    diversified_sampler:
+                      $ref: '#/components/schemas/_common.aggregations___DiversifiedSamplerAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - diversified_sampler
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
             - type: object
               properties:
                 extended_stats:
@@ -44811,8 +44951,48 @@ components:
                   $ref: '#/components/schemas/_common.aggregations___ExtendedStatsBucketAggregation'
               required:
                 - extended_stats_bucket
-            - $ref: '#/components/schemas/_common.aggregations___FilterAggregation'
-            - $ref: '#/components/schemas/_common.aggregations___FiltersAggregation'
+            - allOf:
+                - type: object
+                  properties:
+                    filter:
+                      $ref: '#/components/schemas/_common.aggregations___FilterAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - filter
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
+            - allOf:
+                - type: object
+                  properties:
+                    filters:
+                      $ref: '#/components/schemas/_common.aggregations___FiltersAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - filters
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
             - type: object
               properties:
                 geo_bounds:
@@ -44825,12 +45005,132 @@ components:
                   $ref: '#/components/schemas/_common.aggregations___GeoCentroidAggregation'
               required:
                 - geo_centroid
-            - $ref: '#/components/schemas/_common.aggregations___GeoDistanceAggregation'
-            - $ref: '#/components/schemas/_common.aggregations___GeoHashGridAggregation'
-            - $ref: '#/components/schemas/_common.aggregations___GeoTileGridAggregation'
-            - $ref: '#/components/schemas/_common.aggregations___GlobalAggregation'
-            - $ref: '#/components/schemas/_common.aggregations___HistogramAggregation'
-            - $ref: '#/components/schemas/_common.aggregations___IpRangeAggregation'
+            - allOf:
+                - type: object
+                  properties:
+                    geo_distance:
+                      $ref: '#/components/schemas/_common.aggregations___GeoDistanceAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - geo_distance
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
+            - allOf:
+                - type: object
+                  properties:
+                    geohash_grid:
+                      $ref: '#/components/schemas/_common.aggregations___GeoHashGridAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - geohash_grid
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
+            - allOf:
+                - type: object
+                  properties:
+                    geotile_grid:
+                      $ref: '#/components/schemas/_common.aggregations___GeoTileGridAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - geotile_grid
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
+            - allOf:
+                - type: object
+                  properties:
+                    global:
+                      $ref: '#/components/schemas/_common.aggregations___GlobalAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - global
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
+            - allOf:
+                - type: object
+                  properties:
+                    histogram:
+                      $ref: '#/components/schemas/_common.aggregations___HistogramAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - histogram
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
+            - allOf:
+                - type: object
+                  properties:
+                    ip_range:
+                      $ref: '#/components/schemas/_common.aggregations___IpRangeAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - ip_range
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
             - type: object
               properties:
                 matrix_stats:
@@ -44867,7 +45167,27 @@ components:
                   $ref: '#/components/schemas/_common.aggregations___MinBucketAggregation'
               required:
                 - min_bucket
-            - $ref: '#/components/schemas/_common.aggregations___MissingAggregation'
+            - allOf:
+                - type: object
+                  properties:
+                    missing:
+                      $ref: '#/components/schemas/_common.aggregations___MissingAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - missing
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
             - type: object
               properties:
                 moving_avg:
@@ -44886,15 +45206,75 @@ components:
                   $ref: '#/components/schemas/_common.aggregations___MovingFunctionAggregation'
               required:
                 - moving_fn
-            - $ref: '#/components/schemas/_common.aggregations___MultiTermsAggregation'
-            - $ref: '#/components/schemas/_common.aggregations___NestedAggregation'
+            - allOf:
+                - type: object
+                  properties:
+                    multi_terms:
+                      $ref: '#/components/schemas/_common.aggregations___MultiTermsAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - multi_terms
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
+            - allOf:
+                - type: object
+                  properties:
+                    nested:
+                      $ref: '#/components/schemas/_common.aggregations___NestedAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - nested
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
             - type: object
               properties:
                 normalize:
                   $ref: '#/components/schemas/_common.aggregations___NormalizeAggregation'
               required:
                 - normalize
-            - $ref: '#/components/schemas/_common.aggregations___ParentAggregation'
+            - allOf:
+                - type: object
+                  properties:
+                    parent:
+                      $ref: '#/components/schemas/_common.aggregations___ParentAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - parent
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
             - type: object
               properties:
                 percentile_ranks:
@@ -44913,16 +45293,96 @@ components:
                   $ref: '#/components/schemas/_common.aggregations___PercentilesBucketAggregation'
               required:
                 - percentiles_bucket
-            - $ref: '#/components/schemas/_common.aggregations___RangeAggregation'
-            - $ref: '#/components/schemas/_common.aggregations___RareTermsAggregation'
+            - allOf:
+                - type: object
+                  properties:
+                    range:
+                      $ref: '#/components/schemas/_common.aggregations___RangeAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - range
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
+            - allOf:
+                - type: object
+                  properties:
+                    rare_terms:
+                      $ref: '#/components/schemas/_common.aggregations___RareTermsAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - rare_terms
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
             - type: object
               properties:
                 rate:
                   $ref: '#/components/schemas/_common.aggregations___RateAggregation'
               required:
                 - rate
-            - $ref: '#/components/schemas/_common.aggregations___ReverseNestedAggregation'
-            - $ref: '#/components/schemas/_common.aggregations___SamplerAggregation'
+            - allOf:
+                - type: object
+                  properties:
+                    reverse_nested:
+                      $ref: '#/components/schemas/_common.aggregations___ReverseNestedAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - reverse_nested
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
+            - allOf:
+                - type: object
+                  properties:
+                    sampler:
+                      $ref: '#/components/schemas/_common.aggregations___SamplerAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - sampler
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
             - type: object
               properties:
                 scripted_metric:
@@ -44935,8 +45395,48 @@ components:
                   $ref: '#/components/schemas/_common.aggregations___SerialDifferencingAggregation'
               required:
                 - serial_diff
-            - $ref: '#/components/schemas/_common.aggregations___SignificantTermsAggregation'
-            - $ref: '#/components/schemas/_common.aggregations___SignificantTextAggregation'
+            - allOf:
+                - type: object
+                  properties:
+                    significant_terms:
+                      $ref: '#/components/schemas/_common.aggregations___SignificantTermsAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - significant_terms
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
+            - allOf:
+                - type: object
+                  properties:
+                    significant_text:
+                      $ref: '#/components/schemas/_common.aggregations___SignificantTextAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - significant_text
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
             - type: object
               properties:
                 stats:
@@ -44961,7 +45461,27 @@ components:
                   $ref: '#/components/schemas/_common.aggregations___SumBucketAggregation'
               required:
                 - sum_bucket
-            - $ref: '#/components/schemas/_common.aggregations___TermsAggregation'
+            - allOf:
+                - type: object
+                  properties:
+                    terms:
+                      $ref: '#/components/schemas/_common.aggregations___TermsAggregationFields'
+                    aggregations:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation
+                    aggs:
+                      type: object
+                      additionalProperties:
+                        $ref: '#/components/schemas/_common.aggregations___AggregationContainer'
+                      description: Sub-aggregations for this bucket aggregation (alias for 'aggregations')
+                  required:
+                    - terms
+                - not:
+                    required:
+                      - aggregations
+                      - aggs
             - type: object
               properties:
                 top_hits:
